@@ -142,6 +142,7 @@ ${!DEMO && Array.isArray(d.suites) && d.suites.length ? `<h3 class="sec">Pour al
   ${DEMO?'':Object.keys(NIVEAUX).filter(k => k !== niv(d.level)).map(k => `<button class="btn" type="button" data-l="${k}">Version ${({simple:'simple',pousse:'poussée',avance:'avancée'})[k]}</button>`).join('')}
   <button class="btn" type="button" id="again">Une autre surprise</button>
   ${navigator.share?'<button class="btn" type="button" id="share">Partager</button>':''}
+  ${DEMO?'':'<button class="btn" type="button" data-hai-inviter>Inviter quelqu\'un</button>'}
 </div>`;
   paintStep(); paintSlider();
   $('dots').onclick = e => { const b = e.target.closest('.dot'); if (b) { step = +b.dataset.i; paintStep(); } };
@@ -158,7 +159,13 @@ ${!DEMO && Array.isArray(d.suites) && d.suites.length ? `<h3 class="sec">Pour al
   $('card').querySelectorAll('[data-l]').forEach(b => b.onclick = () => ask(cur.q || cur.titre, b.dataset.l));
   $('card').querySelectorAll('.suite').forEach(b => b.onclick = () => { $('q').value = b.dataset.q; window.scrollTo({top:0, behavior:'smooth'}); ask(b.dataset.q); });
   $('again').onclick = () => $('surp').click();
-  if ($('share')) $('share').onclick = () => navigator.share({title: d.titre, text: `${d.titre} : ${d.concept}`, url: location.origin}).catch(() => {});
+  // Le lien porte l'invitation HoldingAI (?hai=CODE) : l'ouverture et l'arrivée de la personne sont comptées
+  if ($('share') && window.HoldingAIPorte && HoldingAIPorte.codeInvitation) HoldingAIPorte.codeInvitation(); // prêt avant le toucher
+  if ($('share')) $('share').onclick = async () => {
+    const P = window.HoldingAIPorte;
+    const url = P && P.ajouterInvitation ? await P.ajouterInvitation(location.origin + '/').catch(() => location.origin) : location.origin;
+    navigator.share({title: d.titre, text: `${d.titre} : ${d.concept}`, url}).then(() => { if (P && P.noterPartage) P.noterPartage('fiche'); }).catch(() => {});
+  };
   startTimer();
   if ($('ecoute')) $('ecoute').onclick = () => parle ? taire() : raconter();
   taire();
