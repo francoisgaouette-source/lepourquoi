@@ -2,7 +2,7 @@
 
 « C'est quoi, et comment ça marche ? » Simon explique une notion en une minute : le concept en une phrase, un dessin qui se construit étape par étape, un curseur « Et si… ? » et une question pour vérifier. Une surprise du jour apparaît toute seule à l'ouverture.
 
-App **gratuite et sans compte** de HoldingAI.
+App **gratuite** de HoldingAI, avec le compte HoldingAI (obligatoire, comme toutes les apps HoldingAI).
 
 - **lepourquoi.ai** : le site (accueil, comment ça marche, Simon, questions, confidentialité, conditions). www redirige vers lepourquoi.ai.
 - **app.lepourquoi.ai** : l'app installable.
