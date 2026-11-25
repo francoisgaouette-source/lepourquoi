@@ -2,7 +2,12 @@
 
 « C'est quoi, et comment ça marche ? » Simon explique une notion en une minute : le concept en une phrase, un dessin qui se construit étape par étape, un curseur « Et si… ? » et une question pour vérifier. Une surprise du jour apparaît toute seule à l'ouverture.
 
-App **gratuite et sans compte** de HoldingAI. Adresse : https://app.lepourquoi.ai
+App **gratuite et sans compte** de HoldingAI.
+
+- **lepourquoi.ai** : le site (accueil, comment ça marche, Simon, questions, confidentialité, conditions). www redirige vers lepourquoi.ai.
+- **app.lepourquoi.ai** : l'app installable.
+
+Un seul projet Cloudflare Pages sert les deux : `functions/_middleware.js` envoie lepourquoi.ai vers `web/site/`. Les pages du site se génèrent avec `python3 tools/site.py`.
 
 ## Ce qu'il y a dedans
 
