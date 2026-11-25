@@ -19,10 +19,13 @@ App **gratuite et sans compte** de HoldingAI. Adresse : https://app.lepourquoi.a
 - Projet Supabase **Le Pourquoi** (`lpqjhxnnvasjhliywgpt`, Canada), secret `ANTHROPIC_API_KEY`, fonction `fiche` déployée.
 - App inscrite dans HoldingAI Compte (`le-pourquoi`, personnage Simon, https://app.lepourquoi.ai).
 
-## Mettre en ligne ou publier une mise à jour
+## Mise en ligne (automatique)
 
-Dans ce dossier : `npx wrangler deploy`. La première fois, Wrangler ouvre Cloudflare pour te connecter, puis branche app.lepourquoi.ai tout seul.
-Pour une mise à jour : changer `VERSION` dans `web/sw.js`, puis `npx wrangler deploy`. Les gens voient « Nouvelle version du Pourquoi · Mettre à jour ».
+Cloudflare Pages, projet **le-pourquoi**, est relié à ce dépôt : chaque `git push` sur `main` publie l'app (dossier `web/`, aucune commande de build) sur https://app.lepourquoi.ai et https://le-pourquoi.pages.dev.
+Pour que les gens voient la mise à jour, changer `VERSION` dans `web/sw.js` : l'app affiche alors « Nouvelle version du Pourquoi · Mettre à jour ».
+
+La fonction serveur se déploie à part : `supabase functions deploy fiche --no-verify-jwt` (projet `lpqjhxnnvasjhliywgpt`).
+`wrangler.jsonc` et `worker/` restent seulement en solution de rechange (Worker Cloudflare) ; ils ne servent pas pour la mise en ligne actuelle.
 
 ## Coûts
 
