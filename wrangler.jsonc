@@ -1,0 +1,10 @@
+// Cloudflare : un Worker sert l'app à partir du dossier web/, à l'adresse app.lepourquoi.ai.
+// Le domaine lepourquoi.ai doit être dans le même compte Cloudflare.
+{
+  "name": "lepourquoi",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "routes": [{ "pattern": "app.lepourquoi.ai", "custom_domain": true }],
+  "assets": { "directory": "./web", "binding": "ASSETS", "run_worker_first": true }
+}

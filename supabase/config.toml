@@ -1,0 +1,2 @@
+[functions.fiche]
+verify_jwt = false
