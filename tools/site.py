@@ -40,7 +40,7 @@ def page(chemin, titre, description, corps):
 {corps}
 </main>
 <footer><div class="wrap">
-  <span>© {datetime.date.today().year} Le Pourquoi, une app de HoldingAI · Gratuite, sans compte</span>
+  <span>© {datetime.date.today().year} Le Pourquoi, une app de HoldingAI · Gratuite, avec ton compte HoldingAI</span>
   <nav aria-label="Pied de page"><a href="/questions">Questions</a><a href="/confidentialite">Confidentialité</a><a href="/conditions">Conditions</a><a href="mailto:{COURRIEL}">{COURRIEL}</a></nav>
 </div></footer>
 </body>
@@ -93,8 +93,8 @@ ACCUEIL = f'''<section class="hero"><div class="wrap">
 </div></section>
 
 <section class="bande"><div class="wrap narrow" style="text-align:center">
-  <h2>Gratuit, sans compte, sur ton téléphone</h2>
-  <p>Ouvre l'app dans ton navigateur et ajoute-la à ton écran d'accueil. Rien à créer, rien à payer.</p>
+  <h2>Gratuit, sur ton téléphone</h2>
+  <p>Ouvre l'app dans ton navigateur et ajoute-la à ton écran d'accueil. Tu entres avec ton compte HoldingAI, le même pour toutes nos apps. Rien à payer.</p>
   <p><a class="btn plein" href="{APP}">Essayer Le Pourquoi</a></p>
 </div></section>'''
 
@@ -127,7 +127,7 @@ SIMON_PAGE = f'''<section class="bande"><div class="wrap">
 </div></section>'''
 
 QR = [
- ("C'est vraiment gratuit ?", "Oui. Le Pourquoi est gratuit et ne demande pas de compte. Pour garder l'app gratuite, il y a une limite raisonnable de nouvelles fiches par jour et par appareil ; les notions déjà demandées par d'autres ne comptent pas."),
+ ("C'est vraiment gratuit ?", "Oui. Le Pourquoi est gratuit; tu entres avec ton compte HoldingAI, le même pour toutes les apps HoldingAI. Pour garder l'app gratuite, il y a une limite raisonnable de nouvelles fiches par jour et par appareil ; les notions déjà demandées par d'autres ne comptent pas."),
  ("Dois-je créer un compte ?", "Non. Ouvre l'app et pose ta question. Ton historique reste sur ton appareil."),
  ("Comment faire parler Simon ?", "Sur une fiche, appuie sur le bouton « Écouter Simon ». Il utilise la voix française installée sur ton téléphone ou ton ordinateur. Après la première fois, il lit automatiquement les nouvelles fiches. Si tu n'entends rien, vérifie que le son de l'appareil est activé."),
  ("Quelle différence entre Simple, Poussé et Avancé ?", "Simple : des mots de tous les jours, aucun jargon. Poussé : plus de détails et le vrai vocabulaire expliqué. Avancé : les termes techniques, des chiffres et les nuances, pour un connaisseur. Ton choix est retenu."),
@@ -141,9 +141,11 @@ QUESTIONS = '<section class="bande"><div class="wrap narrow"><h1>Questions</h1>'
 CONFID = f'''<section class="bande"><div class="wrap narrow prose">
   <h1>Confidentialité</h1>
   <p class="maj">Dernière mise à jour : {MAJ}</p>
-  <p>Le Pourquoi est conçu pour fonctionner sans compte et avec le moins de données possible.</p>
+  <p>Le Pourquoi est conçu pour fonctionner avec le moins de données possible.</p>
+  <h2>Ton compte HoldingAI</h2>
+  <p>Tu entres dans Le Pourquoi avec ton compte HoldingAI, le même pour toutes les apps HoldingAI. Nous recevons l'identifiant de ce compte et le numéro de cellulaire qui y est associé, pour te reconnaître. Tes fiches ne sont pas reliées à ton compte.</p>
   <h2>Ce que nous ne recueillons pas</h2>
-  <ul><li>Aucun compte, nom, courriel ou numéro de téléphone.</li><li>Aucun témoin publicitaire ni pistage d'une app à l'autre.</li><li>Aucune adresse IP conservée.</li></ul>
+  <ul><li>Aucun nom ni courriel dans les fiches.</li><li>Aucun témoin publicitaire ni pistage d'une app à l'autre.</li><li>Aucune adresse IP conservée.</li></ul>
   <h2>Ce qui passe par nos serveurs</h2>
   <ul>
     <li><strong>Ta question et le niveau choisi</strong>, pour préparer la fiche. Les fiches sont gardées sans aucun lien avec toi, afin de servir la même notion aux autres sans la régénérer. N'écris donc pas de renseignements personnels dans une question.</li>
@@ -185,11 +187,11 @@ INTROUVABLE = f'''<section class="bande"><div class="wrap narrow" style="text-al
 </div></section>'''
 
 FICHIERS = {
-  'index.html': page('/', "Le Pourquoi : c'est quoi, et comment ça marche ?", "Simon t'explique n'importe quelle notion en une minute, avec un dessin qui se construit et sa voix. Gratuit, sans compte.", ACCUEIL),
+  'index.html': page('/', "Le Pourquoi : c'est quoi, et comment ça marche ?", "Simon t'explique n'importe quelle notion en une minute, avec un dessin qui se construit et sa voix. Gratuit.", ACCUEIL),
   'comment-ca-marche.html': page('/comment-ca-marche', "Comment ça marche · Le Pourquoi", "Une question, une fiche d'une minute : le concept, le dessin étape par étape et la voix de Simon. Installer l'app.", COMMENT),
   'simon.html': page('/simon', "Simon · Le Pourquoi", "Simon, le curieux sympathique qui t'explique comment tout marche.", SIMON_PAGE),
-  'questions.html': page('/questions', "Questions · Le Pourquoi", "Gratuit, sans compte, voix de Simon, niveaux, fiabilité : les réponses aux questions fréquentes.", QUESTIONS),
-  'confidentialite.html': page('/confidentialite', "Confidentialité · Le Pourquoi", "Sans compte, sans adresse IP conservée : ce que Le Pourquoi fait de tes données.", CONFID),
+  'questions.html': page('/questions', "Questions · Le Pourquoi", "Gratuit, compte HoldingAI, voix de Simon, niveaux, fiabilité : les réponses aux questions fréquentes.", QUESTIONS),
+  'confidentialite.html': page('/confidentialite', "Confidentialité · Le Pourquoi", "Compte HoldingAI, sans adresse IP conservée : ce que Le Pourquoi fait de tes données.", CONFID),
   'conditions.html': page('/conditions', "Conditions · Le Pourquoi", "Conditions d'utilisation de l'app gratuite Le Pourquoi.", COND),
   '404.html': page('/404', "Page introuvable · Le Pourquoi", "Cette page n'existe pas.", INTROUVABLE),
 }
