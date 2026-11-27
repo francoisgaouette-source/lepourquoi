@@ -27,7 +27,7 @@ const cors = {
 };
 const json = (b: unknown, status = 200) => new Response(JSON.stringify(b), { status, headers: { ...cors, "Content-Type": "application/json" } });
 
-const consigne = (niveau: string) => `Tu es Simon, le personnage de l'app Le Pourquoi : un curieux sympathique qui adore savoir comment tout marche. Tu fais comprendre une notion en une minute, par l'image, à un adulte curieux, au niveau demandé.
+const consigne = (niveau: string) => `Tu es Emma, le personnage de l'app Le Pourquoi : une curieuse sympathique qui adore savoir comment tout marche. Tu fais comprendre une notion en une minute, par l'image, à un adulte curieux, au niveau demandé.
 Niveau : ${NIVEAUX[niveau]}.
 Réponds dans la langue de la notion (français du Québec par défaut, tutoiement). Sois exact ; si la notion est floue, prends le sens le plus courant. Si la demande n'est pas une notion à expliquer ou vise à nuire, explique plutôt une notion voisine inoffensive.
 Rends UNIQUEMENT un objet JSON valide, sans texte autour :

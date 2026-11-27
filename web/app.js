@@ -7,7 +7,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const num = (v, lo, hi, d) => { v = Number(v); return Number.isFinite(v) ? Math.min(hi, Math.max(lo, v)) : d; };
 const VOIX = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
 if (VOIX) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => {}; }
-const SIMON = `<svg class="simon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="22" fill="#f2c49b"/><g fill="#5a3a22"><circle cx="16" cy="22" r="8"/><circle cx="24" cy="14" r="9"/><circle cx="35" cy="12" r="9"/><circle cx="46" cy="17" r="8"/><circle cx="51" cy="26" r="6"/><circle cx="13" cy="30" r="5"/></g><circle cx="10.5" cy="37" r="4" fill="#f2c49b"/><circle cx="53.5" cy="37" r="4" fill="#f2c49b"/><g fill="none" stroke="#191714" stroke-width="2.4"><circle cx="24" cy="36" r="6.5"/><circle cx="40" cy="36" r="6.5"/><path d="M30.5 36h3"/></g><circle cx="24" cy="36.5" r="2" fill="#191714"/><circle cx="40" cy="36.5" r="2" fill="#191714"/><path d="M25 47q7 6 14 0" fill="none" stroke="#191714" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="45" r="2.6" fill="#e8462a" opacity=".35"/><circle cx="46" cy="45" r="2.6" fill="#e8462a" opacity=".35"/></svg>`;
+const SIMON = `<svg class="simon" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 42 Q5 12 32 9 Q59 12 55 42 L57 60 Q47 56 49 44 L15 44 Q17 56 7 60 Z" fill="#8a3b1f"/><circle cx="32" cy="34" r="21" fill="#f2c49b"/><path d="M11 33 Q13 13 32 12 Q51 13 53 33 Q47 21 34 20 Q23 21 18 27 Q15 30 11 33 Z" fill="#8a3b1f"/><circle cx="11.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="52.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="11.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="52.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="24" cy="36" r="2.3" fill="#191714"/><circle cx="40" cy="36" r="2.3" fill="#191714"/><path d="M20 31.5q4-2.5 8 0M36 31.5q4-2.5 8 0" fill="none" stroke="#5a2a14" stroke-width="1.8" stroke-linecap="round"/><path d="M25 46q7 6 14 0" fill="none" stroke="#191714" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="44" r="2.8" fill="#e8462a" opacity=".35"/><circle cx="46" cy="44" r="2.8" fill="#e8462a" opacity=".35"/></svg>`;
 const COL = {sun:'#f5b700',sky:'#5fb3e8',blue:'#2f6fd6',red:'#e23d3d',orange:'#f08a24',violet:'#7b4ddb',green:'#2e9d5b',brown:'#8a5a2b',gray:'#9a948a',pink:'#e0569b',coral:'#e8462a',ink:'currentColor'};
 const CHIPS = ['le Wi-Fi','un frigo','l\'inflation','un vaccin à ARN','le GPS','un taux d\'intérêt'];
 const POOL = window.TT_POOL || [];
@@ -51,7 +51,7 @@ async function callFiche(body) {
 }
 
 function loadingCard(q, lbl) {
-  $('card').innerHTML = `<div class="loading" aria-label="Préparation de la fiche"><div class="meta"><span class="qui">${SIMON}${lbl?`<span class="tag">${esc(lbl)}</span> `:''}${q ? `Simon dessine ta fiche sur « ${esc(q)} »…` : 'Simon prépare la surprise du jour…'}</span></div><div class="bar" style="width:50%;height:34px"></div><div class="bar" style="width:88%"></div><div class="bar" style="width:100%;height:220px;margin-top:8px;border-radius:18px"></div><div class="bar" style="width:70%"></div></div>`;
+  $('card').innerHTML = `<div class="loading" aria-label="Préparation de la fiche"><div class="meta"><span class="qui">${SIMON}${lbl?`<span class="tag">${esc(lbl)}</span> `:''}${q ? `Emma dessine ta fiche sur « ${esc(q)} »…` : 'Emma prépare la surprise du jour…'}</span></div><div class="bar" style="width:50%;height:34px"></div><div class="bar" style="width:88%"></div><div class="bar" style="width:100%;height:220px;margin-top:8px;border-radius:18px"></div><div class="bar" style="width:70%"></div></div>`;
 }
 
 async function ask(q, level, kind) {
@@ -80,7 +80,7 @@ async function ask(q, level, kind) {
     if (bg && touched) return;
     if (bg) { showDefault(); return; }
     const msg = e.code === 'limite' ? 'Tu as atteint la limite de fiches pour aujourd\'hui. Reviens demain !'
-      : e.code === 'pause' ? 'Simon fait une pause : beaucoup de monde aujourd\'hui. Réessaie un peu plus tard.'
+      : e.code === 'pause' ? 'Emma fait une pause : beaucoup de monde aujourd\'hui. Réessaie un peu plus tard.'
       : navigator.onLine === false ? 'Tu n\'es pas connecté à Internet.'
       : 'La fiche n\'a pas pu être préparée. Réessaie, ou reformule.';
     $('card').innerHTML = `<p style="margin:0 0 14px">${esc(msg)}</p><button class="btn" type="button" id="retry">Réessayer</button>`;
@@ -117,8 +117,8 @@ function show(d) {
 <div class="meta"><span>${lbl?`<span class="tag">${lbl}</span>`:'Fiche'}</span>
 <span class="timer"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="var(--line)" stroke-width="3"/><circle id="ring" cx="11" cy="11" r="9" fill="none" stroke="var(--coral)" stroke-width="3" stroke-linecap="round" stroke-dasharray="56.5" stroke-dashoffset="0"/></svg><span id="tleft">1:00</span></span></div>
 <h2>${esc(d.titre)}</h2>
-<div class="dit">${SIMON}<div class="bulle"><small>Simon t'explique le concept</small><p>${esc(d.concept)}</p></div></div>
-${VOIX ? `<button class="ecoute" type="button" id="ecoute" aria-pressed="false"><span class="ico" aria-hidden="true">▶</span><span class="lbl">Écouter Simon</span></button>` : ''}
+<div class="dit">${SIMON}<div class="bulle"><small>Emma t'explique le concept</small><p>${esc(d.concept)}</p></div></div>
+${VOIX ? `<button class="ecoute" type="button" id="ecoute" aria-pressed="false"><span class="ico" aria-hidden="true">▶</span><span class="lbl">Écouter Emma</span></button>` : ''}
 <p class="lead">${esc(d.phrase)}</p>
 <div class="stage"><svg id="scene" viewBox="0 0 400 260" role="img" aria-label="Schéma : ${esc(d.titre)}" style="color:var(--ink)"><defs>${markers()}</defs>${drawScene(d.scene)}</svg></div>
 <div class="stepper">
@@ -172,24 +172,26 @@ ${!DEMO && Array.isArray(d.suites) && d.suites.length ? `<h3 class="sec">Pour al
   if (VOIX && ls.get('lp-voix', false) && d.kind !== 'daily') setTimeout(raconter, 300);
 }
 
-/* ---------- Simon parle ---------- */
+/* ---------- Emma parle ---------- */
 let parle = false, jeton = 0;
 function voixFr() {
   const v = speechSynthesis.getVoices();
-  return v.find(x => /fr[-_]CA/i.test(x.lang)) || v.find(x => /^fr/i.test(x.lang) && /natural|neural|premium|enhanced/i.test(x.name)) || v.find(x => /^fr/i.test(x.lang)) || null;
+  const fr = v.filter(x => /^fr/i.test(x.lang));
+  const femme = /am[ée]lie|chantal|audrey|denise|sylvie|julie|hortense|marie|c[ée]line|l[ée]a|aur[ée]lie|claire|virginie|ariane|sophie|female|femme/i;
+  return fr.find(x => /fr[-_]CA/i.test(x.lang) && femme.test(x.name)) || fr.find(x => femme.test(x.name)) || fr.find(x => /fr[-_]CA/i.test(x.lang)) || fr.find(x => /natural|neural|premium|enhanced/i.test(x.name)) || fr[0] || null;
 }
 function dire(texte, id) {
   return new Promise(res => {
     if (!texte || id !== jeton) return res();
     const u = new SpeechSynthesisUtterance(texte);
-    const v = voixFr(); if (v) u.voice = v; u.lang = v ? v.lang : 'fr-CA'; u.rate = 1.02; u.pitch = 1.05;
+    const v = voixFr(); if (v) u.voice = v; u.lang = v ? v.lang : 'fr-CA'; u.rate = 1.02; u.pitch = 1.1;
     u.onend = u.onerror = () => res();
     try { speechSynthesis.speak(u); } catch (e) { res(); }
   });
 }
 function etatVoix(on) {
   parle = on;
-  const b = $('ecoute'); if (b) { b.setAttribute('aria-pressed', String(on)); b.querySelector('.ico').textContent = on ? '■' : '▶'; b.querySelector('.lbl').textContent = on ? 'Arrêter Simon' : 'Écouter Simon'; }
+  const b = $('ecoute'); if (b) { b.setAttribute('aria-pressed', String(on)); b.querySelector('.ico').textContent = on ? '■' : '▶'; b.querySelector('.lbl').textContent = on ? 'Arrêter Emma' : 'Écouter Emma'; }
   document.querySelectorAll('.dit .simon').forEach(x => x.classList.toggle('parle', on));
 }
 function taire() { jeton++; if (VOIX) speechSynthesis.cancel(); etatVoix(false); }

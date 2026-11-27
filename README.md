@@ -1,10 +1,10 @@
 # Le Pourquoi
 
-« C'est quoi, et comment ça marche ? » Simon explique une notion en une minute : le concept en une phrase, un dessin qui se construit étape par étape, un curseur « Et si… ? » et une question pour vérifier. Une surprise du jour apparaît toute seule à l'ouverture.
+« C'est quoi, et comment ça marche ? » Emma explique une notion en une minute : le concept en une phrase, un dessin qui se construit étape par étape, un curseur « Et si… ? » et une question pour vérifier. Une surprise du jour apparaît toute seule à l'ouverture.
 
 App **gratuite** de HoldingAI, avec le compte HoldingAI (obligatoire, comme toutes les apps HoldingAI).
 
-- **lepourquoi.ai** : le site (accueil, comment ça marche, Simon, questions, confidentialité, conditions). www redirige vers lepourquoi.ai.
+- **lepourquoi.ai** : le site (accueil, comment ça marche, Emma, questions, confidentialité, conditions). www redirige vers lepourquoi.ai.
 - **app.lepourquoi.ai** : l'app installable.
 
 Un seul projet Cloudflare Pages sert les deux : `functions/_middleware.js` envoie lepourquoi.ai vers `web/site/`. Les pages du site se génèrent avec `python3 tools/site.py`.
@@ -22,7 +22,7 @@ Un seul projet Cloudflare Pages sert les deux : `functions/_middleware.js` envoi
 ## En place
 
 - Projet Supabase **Le Pourquoi** (`lpqjhxnnvasjhliywgpt`, Canada), secret `ANTHROPIC_API_KEY`, fonction `fiche` déployée.
-- App inscrite dans HoldingAI Compte (`le-pourquoi`, personnage Simon, https://app.lepourquoi.ai).
+- App inscrite dans HoldingAI Compte (`le-pourquoi`, personnage Emma, https://app.lepourquoi.ai).
 
 ## Mise en ligne (automatique)
 

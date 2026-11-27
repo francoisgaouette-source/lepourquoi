@@ -3,7 +3,7 @@
 // - app.lepourquoi.ai (et le-pourquoi.pages.dev) : l'app (web/)
 // www.lepourquoi.ai redirige vers lepourquoi.ai.
 const PAGES = {
-  "/": "/site/", "/comment-ca-marche": "/site/comment-ca-marche", "/simon": "/site/simon",
+  "/": "/site/", "/comment-ca-marche": "/site/comment-ca-marche", "/emma": "/site/emma",
   "/questions": "/site/questions", "/confidentialite": "/site/confidentialite", "/conditions": "/site/conditions",
 };
 const FICHIERS = ["/site.css", "/favicon.png", "/robots.txt", "/sitemap.xml"];
@@ -15,6 +15,7 @@ export async function onRequest({ request, env, next }) {
     return Response.redirect(`https://lepourquoi.ai${url.pathname}${url.search}`, 301);
   }
   if (url.hostname !== "lepourquoi.ai") return next();
+  if (url.pathname === "/simon") return Response.redirect("https://lepourquoi.ai/emma", 301); // ancien nom du personnage
 
   const chemin = url.pathname.replace(/\.html$/, "").replace(/(.)\/$/, "$1");
   let cible = PAGES[chemin] || (FICHIERS.includes(chemin) ? "/site" + chemin : null);

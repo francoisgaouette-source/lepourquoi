@@ -8,9 +8,9 @@ APP = 'https://app.lepourquoi.ai'
 COURRIEL = 'bonjour@lepourquoi.ai'
 MAJ = '25 novembre 2026'
 
-SIMON = '''<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="22" fill="#f2c49b"/><g fill="#5a3a22"><circle cx="16" cy="22" r="8"/><circle cx="24" cy="14" r="9"/><circle cx="35" cy="12" r="9"/><circle cx="46" cy="17" r="8"/><circle cx="51" cy="26" r="6"/><circle cx="13" cy="30" r="5"/></g><circle cx="10.5" cy="37" r="4" fill="#f2c49b"/><circle cx="53.5" cy="37" r="4" fill="#f2c49b"/><g fill="none" stroke="#191714" stroke-width="2.4"><circle cx="24" cy="36" r="6.5"/><circle cx="40" cy="36" r="6.5"/><path d="M30.5 36h3"/></g><circle cx="24" cy="36.5" r="2" fill="#191714"/><circle cx="40" cy="36.5" r="2" fill="#191714"/><path d="M25 47q7 6 14 0" fill="none" stroke="#191714" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="45" r="2.6" fill="#e8462a" opacity=".35"/><circle cx="46" cy="45" r="2.6" fill="#e8462a" opacity=".35"/></svg>'''
+SIMON = '''<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M9 42 Q5 12 32 9 Q59 12 55 42 L57 60 Q47 56 49 44 L15 44 Q17 56 7 60 Z" fill="#8a3b1f"/><circle cx="32" cy="34" r="21" fill="#f2c49b"/><path d="M11 33 Q13 13 32 12 Q51 13 53 33 Q47 21 34 20 Q23 21 18 27 Q15 30 11 33 Z" fill="#8a3b1f"/><circle cx="11.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="52.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="11.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="52.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="24" cy="36" r="2.3" fill="#191714"/><circle cx="40" cy="36" r="2.3" fill="#191714"/><path d="M20 31.5q4-2.5 8 0M36 31.5q4-2.5 8 0" fill="none" stroke="#5a2a14" stroke-width="1.8" stroke-linecap="round"/><path d="M25 46q7 6 14 0" fill="none" stroke="#191714" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="44" r="2.8" fill="#e8462a" opacity=".35"/><circle cx="46" cy="44" r="2.8" fill="#e8462a" opacity=".35"/></svg>'''
 
-PAGES = [('/', 'Accueil'), ('/comment-ca-marche', 'Comment ça marche'), ('/simon', 'Simon'), ('/questions', 'Questions')]
+PAGES = [('/', 'Accueil'), ('/comment-ca-marche', 'Comment ça marche'), ('/emma', 'Emma'), ('/questions', 'Questions')]
 
 def page(chemin, titre, description, corps):
     nav = ''.join(f'<a href="{c}"{" aria-current=\"page\"" if c == chemin else ""}>{t}</a>' for c, t in PAGES[1:])
@@ -63,13 +63,13 @@ SCHEMA = '''<svg class="schema" viewBox="0 0 400 200" role="img" aria-label="Exe
 ACCUEIL = f'''<section class="hero"><div class="wrap">
   <div>
     <h1>C'est quoi, et comment ça marche&nbsp;?</h1>
-    <p class="lead">Tape une chose qui t'intrigue. Simon te l'explique en une minute, avec un dessin qui se construit sous tes yeux, et il te le lit à voix haute.</p>
+    <p class="lead">Tape une chose qui t'intrigue. Emma te l'explique en une minute, avec un dessin qui se construit sous tes yeux, et il te le lit à voix haute.</p>
     <div class="actions"><a class="btn plein" href="{APP}">Ouvrir l'app</a><a class="btn clair" href="/comment-ca-marche">Comment ça marche</a></div>
   </div>
   <div class="carte" aria-label="Exemple de fiche">
     <span class="tag">Surprise du jour</span>
     <h3>Un arc-en-ciel</h3>
-    <div class="dit">{SIMON}<div class="bulle"><small>Simon t'explique le concept</small>Chaque goutte de pluie trie la lumière par couleur et te la renvoie.</div></div>
+    <div class="dit">{SIMON}<div class="bulle"><small>Emma t'explique le concept</small>Chaque goutte de pluie trie la lumière par couleur et te la renvoie.</div></div>
     {SCHEMA}
   </div>
 </div></section>
@@ -79,15 +79,15 @@ ACCUEIL = f'''<section class="hero"><div class="wrap">
   <div class="grille">
     <div class="bloc"><div class="num">Le concept</div><h3>L'idée clé d'abord</h3><p>Une phrase claire qui dit ce que c'est vraiment, avant tout le reste.</p></div>
     <div class="bloc"><div class="num">Le dessin</div><h3>Ça se construit sous tes yeux</h3><p>Un schéma qui s'ajoute étape par étape : tu vois le mécanisme au lieu de l'imaginer.</p></div>
-    <div class="bloc"><div class="num">La voix</div><h3>Simon te le raconte</h3><p>Appuie sur « Écouter Simon » : il lit la fiche et fait avancer les étapes. Pas besoin de lire.</p></div>
+    <div class="bloc"><div class="num">La voix</div><h3>Emma te le raconte</h3><p>Appuie sur « Écouter Emma » : elle lit la fiche et fait avancer les étapes. Pas besoin de lire.</p></div>
     <div class="bloc"><div class="num">Et si…?</div><h3>Joue avec la notion</h3><p>Un curseur montre ce qui change quand on modifie un facteur, puis une petite question vérifie que c'est clair.</p></div>
   </div>
 </div></section>
 
 <section class="bande teinte"><div class="wrap">
   <div class="grille">
-    <div><h2>À ton niveau</h2><p>Choisis comment Simon t'explique : tout simplement, plus en détail, ou comme à un connaisseur.</p><div class="niveaux"><span>Simple</span><span>Poussé</span><span>Avancé</span></div></div>
-    <div><h2>Pour aller plus loin</h2><p>Chaque fiche se termine par les questions qu'on se pose ensuite. Le champagne&nbsp;? Simon te propose aussi comment le conserver et comment bien le servir.</p></div>
+    <div><h2>À ton niveau</h2><p>Choisis comment Emma t'explique : tout simplement, plus en détail, ou comme à un connaisseur.</p><div class="niveaux"><span>Simple</span><span>Poussé</span><span>Avancé</span></div></div>
+    <div><h2>Pour aller plus loin</h2><p>Chaque fiche se termine par les questions qu'on se pose ensuite. Le champagne&nbsp;? Emma te propose aussi comment le conserver et comment bien le servir.</p></div>
     <div><h2>Une surprise chaque jour</h2><p>En ouvrant l'app, une nouvelle notion t'attend : le tonnerre, les marées, la pâte qui lève, le sirop d'érable…</p></div>
   </div>
 </div></section>
@@ -103,8 +103,8 @@ COMMENT = f'''<section class="bande"><div class="wrap narrow prose">
   <p>Le Pourquoi transforme une question en une fiche courte et visuelle. Voici ce qui se passe quand tu demandes « le GPS » ou « une éolienne ».</p>
   <div class="grille" style="margin:28px 0">
     <div class="bloc"><div class="num">1</div><h3>Tu demandes</h3><p>Tape une chose qui t'intrigue, touche une suggestion ou appuie sur « Surprends-moi ». Choisis ton niveau : Simple, Poussé ou Avancé.</p></div>
-    <div class="bloc"><div class="num">2</div><h3>Simon prépare la fiche</h3><p>En quelques secondes : le concept, une définition simple, une image du quotidien, les étapes du mécanisme et un dessin.</p></div>
-    <div class="bloc"><div class="num">3</div><h3>Tu regardes ou tu écoutes</h3><p>Avance étape par étape, ou laisse Simon tout te lire pendant que le dessin se complète.</p></div>
+    <div class="bloc"><div class="num">2</div><h3>Emma prépare la fiche</h3><p>En quelques secondes : le concept, une définition simple, une image du quotidien, les étapes du mécanisme et un dessin.</p></div>
+    <div class="bloc"><div class="num">3</div><h3>Tu regardes ou tu écoutes</h3><p>Avance étape par étape, ou laisse Emma tout te lire pendant que le dessin se complète.</p></div>
     <div class="bloc"><div class="num">4</div><h3>Tu vas plus loin</h3><p>Le curseur « Et si…? », la question de vérification, puis les questions liées pour continuer.</p></div>
   </div>
   <h2>Installer l'app</h2>
@@ -118,21 +118,21 @@ COMMENT = f'''<section class="bande"><div class="wrap narrow prose">
 
 SIMON_PAGE = f'''<section class="bande"><div class="wrap">
   <div class="simon-grand">{SIMON}<div class="prose">
-    <h1>Voici Simon</h1>
-    <p>Simon est le personnage du Pourquoi. C'est un curieux sympathique qui adore savoir comment tout marche : pourquoi le pain lève, comment le frigo fait du froid, d'où vient le tonnerre.</p>
-    <p>Son truc : aller droit à l'idée qui fait « ah, c'est donc ça&nbsp;! », puis le montrer avec un dessin plutôt qu'un long texte. Il tutoie, il parle simplement, et il peut tout te lire à voix haute.</p>
-    <p>Simon fait partie de la famille des personnages HoldingAI, avec Rosalie du Commis, Gaston du Tiroir, Colette du Plumeau et les autres.</p>
-    <p><a class="btn plein" href="{APP}">Poser une question à Simon</a></p>
+    <h1>Voici Emma</h1>
+    <p>Emma est le personnage du Pourquoi. C'est une curieuse sympathique qui adore savoir comment tout marche : pourquoi le pain lève, comment le frigo fait du froid, d'où vient le tonnerre.</p>
+    <p>Son truc : aller droit à l'idée qui fait « ah, c'est donc ça&nbsp;! », puis le montrer avec un dessin plutôt qu'un long texte. Elle tutoie, elle parle simplement, et elle peut tout te lire à voix haute.</p>
+    <p>Emma fait partie de la famille des personnages HoldingAI, avec Catherine du Commis, Louis-Philippe du Tiroir, Colette du Plumeau et les autres.</p>
+    <p><a class="btn plein" href="{APP}">Poser une question à Emma</a></p>
   </div></div>
 </div></section>'''
 
 QR = [
  ("C'est vraiment gratuit ?", "Oui. Le Pourquoi est gratuit; tu entres avec ton compte HoldingAI, le même pour toutes les apps HoldingAI. Pour garder l'app gratuite, il y a une limite raisonnable de nouvelles fiches par jour et par appareil ; les notions déjà demandées par d'autres ne comptent pas."),
  ("Dois-je créer un compte ?", "Non. Ouvre l'app et pose ta question. Ton historique reste sur ton appareil."),
- ("Comment faire parler Simon ?", "Sur une fiche, appuie sur le bouton « Écouter Simon ». Il utilise la voix française installée sur ton téléphone ou ton ordinateur. Après la première fois, il lit automatiquement les nouvelles fiches. Si tu n'entends rien, vérifie que le son de l'appareil est activé."),
+ ("Comment faire parler Emma ?", "Sur une fiche, appuie sur le bouton « Écouter Emma ». Elle utilise la voix française installée sur ton téléphone ou ton ordinateur. Après la première fois, elle lit automatiquement les nouvelles fiches. Si tu n'entends rien, vérifie que le son de l'appareil est activé."),
  ("Quelle différence entre Simple, Poussé et Avancé ?", "Simple : des mots de tous les jours, aucun jargon. Poussé : plus de détails et le vrai vocabulaire expliqué. Avancé : les termes techniques, des chiffres et les nuances, pour un connaisseur. Ton choix est retenu."),
  ("Les explications sont-elles fiables ?", "Elles sont rédigées par une intelligence artificielle guidée pour être exacte, mais une fiche d'une minute simplifie forcément et peut contenir une erreur. Pour la santé, l'argent ou le droit, vérifie auprès d'un professionnel ou d'une source officielle."),
- ("Est-ce que je peux poser n'importe quelle question ?", "Toute chose qu'on peut expliquer : un objet, un phénomène, une notion d'économie ou de science, un geste pratique (conserver, choisir, utiliser). Simon ne répond pas aux demandes qui visent à nuire."),
+ ("Est-ce que je peux poser n'importe quelle question ?", "Toute chose qu'on peut expliquer : un objet, un phénomène, une notion d'économie ou de science, un geste pratique (conserver, choisir, utiliser). Emma ne répond pas aux demandes qui visent à nuire."),
  ("Ça marche sans Internet ?", "L'app s'ouvre hors ligne et garde tes dernières fiches, mais une nouvelle question demande une connexion."),
  ("Comment vous joindre ?", f"Écris-nous à {COURRIEL}."),
 ]
@@ -152,8 +152,8 @@ CONFID = f'''<section class="bande"><div class="wrap narrow prose">
     <li><strong>Une empreinte anonyme</strong> calculée à partir de ton adresse IP (l'adresse elle-même n'est pas gardée), avec l'heure de la demande, uniquement pour appliquer la limite quotidienne. Ces traces servent à compter les demandes des dernières 24 heures.</li>
   </ul>
   <h2>Ce qui reste sur ton appareil</h2>
-  <p>Ton historique de fiches, ton niveau préféré et ta préférence pour la voix de Simon sont gardés dans ton navigateur. Tu peux les effacer en effaçant les données du site dans ton navigateur.</p>
-  <h2>La voix de Simon</h2>
+  <p>Ton historique de fiches, ton niveau préféré et ta préférence pour la voix de Emma sont gardés dans ton navigateur. Tu peux les effacer en effaçant les données du site dans ton navigateur.</p>
+  <h2>La voix de Emma</h2>
   <p>La lecture à voix haute utilise la synthèse vocale de ton appareil. Le texte lu ne nous est pas envoyé pour cette lecture.</p>
   <h2>Nos fournisseurs</h2>
   <ul><li><strong>Anthropic</strong> (Claude) rédige les fiches à partir de ta question.</li><li><strong>Supabase</strong> héberge la base de données et la fonction serveur, au Canada (région ca-central-1).</li><li><strong>Cloudflare</strong> sert le site et l'app.</li></ul>
@@ -172,7 +172,7 @@ COND = f'''<section class="bande"><div class="wrap narrow prose">
   <h2>Utilisation raisonnable</h2>
   <p>Pour garder l'app gratuite, le nombre de nouvelles fiches par jour est limité. Il est interdit d'automatiser des demandes, de contourner les limites ou d'utiliser l'app pour obtenir des contenus visant à nuire.</p>
   <h2>Contenu</h2>
-  <p>Tu peux partager les fiches pour un usage personnel ou éducatif. Le nom Le Pourquoi, le personnage de Simon et le design de l'app appartiennent à HoldingAI.</p>
+  <p>Tu peux partager les fiches pour un usage personnel ou éducatif. Le nom Le Pourquoi, le personnage de Emma et le design de l'app appartiennent à HoldingAI.</p>
   <h2>Responsabilité</h2>
   <p>Dans la mesure permise par la loi, HoldingAI n'est pas responsable des dommages découlant de l'utilisation des fiches. Ces conditions sont régies par les lois du Québec.</p>
   <h2>Nous joindre</h2>
@@ -181,16 +181,16 @@ COND = f'''<section class="bande"><div class="wrap narrow prose">
 
 INTROUVABLE = f'''<section class="bande"><div class="wrap narrow" style="text-align:center">
   <div style="width:120px;margin:0 auto 12px">{SIMON}</div>
-  <h1>Même Simon ne trouve pas cette page</h1>
+  <h1>Même Emma ne trouve pas cette page</h1>
   <p>Elle a peut-être changé d'adresse. Mais tu peux toujours lui poser ta question.</p>
   <p><a class="btn plein" href="{APP}">Ouvrir l'app</a> <a class="btn clair" href="/">Retour à l'accueil</a></p>
 </div></section>'''
 
 FICHIERS = {
-  'index.html': page('/', "Le Pourquoi : c'est quoi, et comment ça marche ?", "Simon t'explique n'importe quelle notion en une minute, avec un dessin qui se construit et sa voix. Gratuit.", ACCUEIL),
-  'comment-ca-marche.html': page('/comment-ca-marche', "Comment ça marche · Le Pourquoi", "Une question, une fiche d'une minute : le concept, le dessin étape par étape et la voix de Simon. Installer l'app.", COMMENT),
-  'simon.html': page('/simon', "Simon · Le Pourquoi", "Simon, le curieux sympathique qui t'explique comment tout marche.", SIMON_PAGE),
-  'questions.html': page('/questions', "Questions · Le Pourquoi", "Gratuit, compte HoldingAI, voix de Simon, niveaux, fiabilité : les réponses aux questions fréquentes.", QUESTIONS),
+  'index.html': page('/', "Le Pourquoi : c'est quoi, et comment ça marche ?", "Emma t'explique n'importe quelle notion en une minute, avec un dessin qui se construit et sa voix. Gratuit.", ACCUEIL),
+  'comment-ca-marche.html': page('/comment-ca-marche', "Comment ça marche · Le Pourquoi", "Une question, une fiche d'une minute : le concept, le dessin étape par étape et la voix de Emma. Installer l'app.", COMMENT),
+  'emma.html': page('/emma', "Emma · Le Pourquoi", "Emma, la curieuse sympathique qui t'explique comment tout marche.", SIMON_PAGE),
+  'questions.html': page('/questions', "Questions · Le Pourquoi", "Gratuit, compte HoldingAI, voix de Emma, niveaux, fiabilité : les réponses aux questions fréquentes.", QUESTIONS),
   'confidentialite.html': page('/confidentialite', "Confidentialité · Le Pourquoi", "Compte HoldingAI, sans adresse IP conservée : ce que Le Pourquoi fait de tes données.", CONFID),
   'conditions.html': page('/conditions', "Conditions · Le Pourquoi", "Conditions d'utilisation de l'app gratuite Le Pourquoi.", COND),
   '404.html': page('/404', "Page introuvable · Le Pourquoi", "Cette page n'existe pas.", INTROUVABLE),

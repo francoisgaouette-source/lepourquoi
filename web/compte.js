@@ -5,7 +5,7 @@
   const dep = await HoldingAI.demarrer({ obligatoire: true });
   if (dep.redirection) return;
   window.HOLDINGAI_PORTE = {
-    app: "le-pourquoi", nomApp: "Le Pourquoi", personnage: "Simon",
+    app: "le-pourquoi", nomApp: "Le Pourquoi", personnage: "Emma",
     connecte: !!dep.session, prenom: dep.session ? dep.session.nom : "",
     surDeconnexion: () => { HoldingAI.deconnexion(); location.reload(); },
   };
