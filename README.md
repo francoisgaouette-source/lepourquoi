@@ -4,7 +4,7 @@
 
 App **gratuite** de HoldingAI, avec le compte HoldingAI (obligatoire, comme toutes les apps HoldingAI).
 
-- **lepourquoi.ai** : le site (accueil, comment ça marche, Emma, questions, confidentialité, conditions). www redirige vers lepourquoi.ai.
+- **lepourquoi.ai** : le site. La page d'accueil suit le gabarit commun des sites de L'Établi (11 sections : menu, accueil, problème, comment ça marche, l'app à l'écran, Emma, confiance, prix, questions, dernier appel, pied de page), plus les pages confidentialité, conditions, comment ça marche, Emma et questions. www redirige vers lepourquoi.ai.
 - **app.lepourquoi.ai** : l'app installable.
 
 Un seul projet Cloudflare Pages sert les deux : `functions/_middleware.js` envoie lepourquoi.ai vers `web/site/`. Les pages du site se génèrent avec `python3 tools/site.py`.

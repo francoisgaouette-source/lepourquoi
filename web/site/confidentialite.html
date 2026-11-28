@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Confidentialité · Le Pourquoi</title>
-<meta name="description" content="Compte L’Établi, sans adresse IP conservée : ce que Le Pourquoi fait de tes données.">
+<meta name="description" content="Un seul compte, sans adresse IP conservée : ce que Le Pourquoi fait de tes données.">
 <meta property="og:title" content="Confidentialité · Le Pourquoi">
-<meta property="og:description" content="Compte L’Établi, sans adresse IP conservée : ce que Le Pourquoi fait de tes données.">
+<meta property="og:description" content="Un seul compte, sans adresse IP conservée : ce que Le Pourquoi fait de tes données.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lepourquoi.ai/confidentialite">
 <meta name="theme-color" content="#ffd84d">
@@ -16,17 +16,22 @@
 <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-<header class="nav"><div class="wrap">
-  <a class="logo" href="/"><img src="/emma.webp" alt="" width="320" height="320" decoding="async" style="border-radius:50%;object-fit:cover">Le Pourquoi</a>
-  <nav class="liens" aria-label="Site"><a href="/comment-ca-marche">Comment ça marche</a><a href="/emma">Emma</a><a href="/questions">Questions</a><a href="https://app.lepourquoi.ai">Ouvrir l'app</a></nav>
+<header id="entete" class="nav"><div class="wrap">
+  <a class="logo" href="/"><svg class="symbole" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.5 11a6.5 6.5 0 1 1 9.4 5.8c-2 1-2.9 2.3-2.9 4.4" fill="none" stroke="var(--marque)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="27.6" r="3.1" fill="#E8743B"/></svg><span>Le Pourquoi</span></a>
+  <nav class="liens" aria-label="Sections"><a href="/#comment">Comment ça marche</a><a href="/#personnage">Emma</a><a href="/#prix">Prix</a><a href="/#questions">Questions</a></nav>
+  <div class="droite">
+    <details class="menu"><summary>Menu</summary><nav aria-label="Sections" onclick="this.parentNode.open = false"><a href="/#comment">Comment ça marche</a><a href="/#personnage">Emma</a><a href="/#prix">Prix</a><a href="/#questions">Questions</a></nav></details>
+    <a class="connexion" href="https://app.lepourquoi.ai">Se connecter</a>
+    <a class="btn marque petit" href="https://app.lepourquoi.ai">Commencer</a>
+  </div>
 </div></header>
 <main>
 <section class="bande"><div class="wrap narrow prose">
   <h1>Confidentialité</h1>
   <p class="maj">Dernière mise à jour : 25 novembre 2026</p>
   <p>Le Pourquoi est conçu pour fonctionner avec le moins de données possible.</p>
-  <h2>Ton compte L’Établi</h2>
-  <p>Tu entres dans Le Pourquoi avec ton compte L’Établi, le même pour toutes les apps de L’Établi. Nous recevons l'identifiant de ce compte et le numéro de cellulaire qui y est associé, pour te reconnaître. Tes fiches ne sont pas reliées à ton compte.</p>
+  <h2>Ton compte</h2>
+  <p>Tu entres dans Le Pourquoi avec ton compte, le même pour toutes les apps de L’Établi. Nous recevons l'identifiant de ce compte et le numéro de cellulaire qui y est associé, pour te reconnaître. Tes fiches ne sont pas reliées à ton compte.</p>
   <h2>Ce que nous ne recueillons pas</h2>
   <ul><li>Aucun nom ni courriel dans les fiches.</li><li>Aucun témoin publicitaire ni pistage d'une app à l'autre.</li><li>Aucune adresse IP conservée.</li></ul>
   <h2>Ce qui passe par nos serveurs</h2>
@@ -45,9 +50,10 @@
   <p>Comme nous ne gardons aucun renseignement qui t'identifie, il n'y a pas de dossier à ton nom. Pour toute question sur la protection des renseignements personnels (Loi 25), écris à <a href="mailto:bonjour@lepourquoi.ai">bonjour@lepourquoi.ai</a>.</p>
 </div></section>
 </main>
-<footer><div class="wrap">
-  <span>© 2026 Le Pourquoi, une app de L’Établi · Gratuite, avec ton compte L’Établi</span>
-  <nav aria-label="Pied de page"><a href="/questions">Questions</a><a href="/confidentialite">Confidentialité</a><a href="/conditions">Conditions</a><a href="mailto:bonjour@lepourquoi.ai">bonjour@lepourquoi.ai</a></nav>
+<footer id="pied"><div class="wrap">
+  <div class="signature"><svg class="symbole" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.5 11a6.5 6.5 0 1 1 9.4 5.8c-2 1-2.9 2.3-2.9 4.4" fill="none" stroke="var(--marque)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="27.6" r="3.1" fill="#E8743B"/></svg><div><div class="sig-nom">Le Pourquoi</div><div class="sig-etabli"><svg width="12" height="12" viewBox="0 0 64 64" aria-hidden="true"><rect x="40" y="10" width="14" height="10" rx="2" fill="#B8954A"/><rect x="45" y="20" width="4" height="4" fill="#B8954A"/><rect x="4" y="24" width="56" height="9" rx="2.5" fill="currentColor"/><rect x="10" y="33" width="6" height="25" rx="1.5" fill="currentColor"/><rect x="48" y="33" width="6" height="25" rx="1.5" fill="currentColor"/><rect x="16" y="45" width="32" height="4" fill="currentColor"/><rect x="2" y="27" width="5" height="12" rx="1.5" fill="#B8954A"/></svg>Fait à L’Établi</div></div></div>
+  <nav class="liens-pied" aria-label="Pied de page"><a href="/confidentialite">Confidentialité</a><a href="/conditions">Conditions</a><a href="mailto:bonjour@lepourquoi.ai">Nous écrire</a><a href="https://letabli.ai/#apps">Les autres apps de L’Établi</a></nav>
+  <p class="copy">© 2026 L’Établi. Fait au Québec.</p>
 </div></footer>
 </body>
 </html>

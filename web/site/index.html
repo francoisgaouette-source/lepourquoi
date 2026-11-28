@@ -16,21 +16,26 @@
 <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-<header class="nav"><div class="wrap">
-  <a class="logo" href="/"><img src="/emma.webp" alt="" width="320" height="320" decoding="async" style="border-radius:50%;object-fit:cover">Le Pourquoi</a>
-  <nav class="liens" aria-label="Site"><a href="/comment-ca-marche">Comment ça marche</a><a href="/emma">Emma</a><a href="/questions">Questions</a><a href="https://app.lepourquoi.ai">Ouvrir l'app</a></nav>
+<header id="entete" class="nav"><div class="wrap">
+  <a class="logo" href="/"><svg class="symbole" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.5 11a6.5 6.5 0 1 1 9.4 5.8c-2 1-2.9 2.3-2.9 4.4" fill="none" stroke="var(--marque)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="27.6" r="3.1" fill="#E8743B"/></svg><span>Le Pourquoi</span></a>
+  <nav class="liens" aria-label="Sections"><a href="#comment">Comment ça marche</a><a href="#personnage">Emma</a><a href="#prix">Prix</a><a href="#questions">Questions</a></nav>
+  <div class="droite">
+    <details class="menu"><summary>Menu</summary><nav aria-label="Sections" onclick="this.parentNode.open = false"><a href="#comment">Comment ça marche</a><a href="#personnage">Emma</a><a href="#prix">Prix</a><a href="#questions">Questions</a></nav></details>
+    <a class="connexion" href="https://app.lepourquoi.ai">Se connecter</a>
+    <a class="btn marque petit" href="https://app.lepourquoi.ai">Commencer</a>
+  </div>
 </div></header>
 <main>
-<section class="hero"><div class="wrap">
+<section id="accueil" class="hero"><div class="wrap">
   <div>
     <h1>C'est quoi, et comment ça marche&nbsp;?</h1>
     <p class="lead">Tape une chose qui t'intrigue. Emma te l'explique en une minute, avec un dessin qui se construit sous tes yeux, et elle te le lit à voix haute.</p>
-    <div class="actions"><a class="btn plein" href="https://app.lepourquoi.ai">Ouvrir l'app</a><a class="btn clair" href="/comment-ca-marche">Comment ça marche</a></div>
+    <div class="actions"><a class="btn marque" href="https://app.lepourquoi.ai">Commencer</a><a class="btn clair" href="#comment">Comment ça marche</a></div>
   </div>
   <div class="carte" aria-label="Exemple de fiche">
     <span class="tag">Surprise du jour</span>
     <h3>Un arc-en-ciel</h3>
-    <div class="dit"><img src="/emma.webp" alt="" width="320" height="320" decoding="async" style="border-radius:50%;object-fit:cover"><div class="bulle"><small>Emma t'explique le concept</small>Chaque goutte de pluie trie la lumière par couleur et te la renvoie.</div></div>
+    <div class="dit"><img src="https://compte.letabli.ai/personnages/emma.webp" alt="" width="320" height="320" decoding="async" style="border-radius:50%;object-fit:cover"><div class="bulle"><small>Emma t'explique le concept</small>Chaque goutte de pluie trie la lumière par couleur et te la renvoie.</div></div>
     <svg class="schema" viewBox="0 0 400 200" role="img" aria-label="Exemple de dessin : une goutte de pluie qui sépare la lumière en couleurs">
 <defs><marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#e23d3d"/></marker><marker id="j" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#f5b700"/></marker></defs>
 <circle cx="46" cy="40" r="20" fill="#f5b700" fill-opacity=".3" stroke="#f5b700" stroke-width="2.5"/>
@@ -46,17 +51,60 @@
   </div>
 </div></section>
 
-<section class="bande"><div class="wrap">
-  <h2>Une minute, et tu as compris</h2>
-  <div class="grille">
-    <div class="bloc"><div class="num">Le concept</div><h3>L'idée clé d'abord</h3><p>Une phrase claire qui dit ce que c'est vraiment, avant tout le reste.</p></div>
-    <div class="bloc"><div class="num">Le dessin</div><h3>Ça se construit sous tes yeux</h3><p>Un schéma qui s'ajoute étape par étape : tu vois le mécanisme au lieu de l'imaginer.</p></div>
-    <div class="bloc"><div class="num">La voix</div><h3>Emma te le raconte</h3><p>Appuie sur « Écouter Emma » : elle lit la fiche et fait avancer les étapes. Pas besoin de lire.</p></div>
-    <div class="bloc"><div class="num">Et si…?</div><h3>Joue avec la notion</h3><p>Un curseur montre ce qui change quand on modifie un facteur, puis une petite question vérifie que c'est clair.</p></div>
+<section id="probleme" class="bande"><div class="wrap texte">
+  <h2>Tu voulais juste comprendre</h2>
+  <p>Tu te demandes comment marche le GPS. Tu cherches, et tu tombes sur un article interminable, une vidéo qui commence par une pub ou une explication pleine de mots que personne ne t'explique.</p>
+  <p>Au bout d'un moment, tu en sais plus sur le sujet… mais tu n'as toujours pas l'idée clé, celle qui fait « ah, c'est donc ça&nbsp;! ».</p>
+</div></section>
+
+<section id="comment" class="bande teinte"><div class="wrap">
+  <h2>Comment ça marche</h2>
+  <ol class="etapes">
+    <li><span class="num">1</span><div><h3>Tu demandes</h3><p>Tape une chose qui t'intrigue, touche une suggestion ou appuie sur « Surprends-moi ».</p></div></li>
+    <li><span class="num">2</span><div><h3>Emma prépare la fiche</h3><p>En quelques secondes : l'idée clé en une phrase, une image du quotidien et un dessin en quelques étapes.</p></div></li>
+    <li><span class="num">3</span><div><h3>Tu regardes, tu écoutes, tu joues</h3><p>Avance étape par étape ou laisse Emma tout te lire, puis essaie le curseur « Et si…&nbsp;? » et la petite question.</p></div></li>
+  </ol>
+</div></section>
+
+<section id="app" class="bande"><div class="wrap">
+  <h2>L'app à l'écran</h2>
+  <div class="ecran-app">
+    <div class="telephone" role="img" aria-label="Aperçu de l'app : une fiche sur l'arc-en-ciel">
+      <div class="t-haut">
+        <div class="t-marque"><svg class="symbole" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.5 11a6.5 6.5 0 1 1 9.4 5.8c-2 1-2.9 2.3-2.9 4.4" fill="none" stroke="var(--marque)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="27.6" r="3.1" fill="#E8743B"/></svg>Le Pourquoi</div>
+        <div class="t-champ"><span>Un arc-en-ciel</span><b>Explique-moi</b></div>
+        <div class="niveaux"><span>Simple</span><span>Poussé</span><span>Avancé</span></div>
+      </div>
+      <div class="t-fiche">
+        <div class="t-titre">Un arc-en-ciel</div>
+        <div class="t-concept"><small>Le concept</small>Chaque goutte trie la lumière par couleur.</div>
+        <div class="t-ecoute">▶ Écouter Emma</div>
+        <svg class="schema" viewBox="0 0 400 200" role="img" aria-label="Exemple de dessin : une goutte de pluie qui sépare la lumière en couleurs">
+<defs><marker id="f2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#e23d3d"/></marker><marker id="j2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#f5b700"/></marker></defs>
+<circle cx="46" cy="40" r="20" fill="#f5b700" fill-opacity=".3" stroke="#f5b700" stroke-width="2.5"/>
+<line x1="70" y1="50" x2="160" y2="80" stroke="#f5b700" stroke-width="3.5" marker-end="url(#j2)"/>
+<circle cx="220" cy="105" r="62" fill="#5fb3e8" fill-opacity=".28" stroke="#5fb3e8" stroke-width="2.5"/>
+<line x1="160" y1="80" x2="276" y2="88" stroke="#e23d3d" stroke-width="3.5"/><line x1="160" y1="80" x2="270" y2="134" stroke="#7b4ddb" stroke-width="3.5"/>
+<line x1="276" y1="88" x2="190" y2="158" stroke="#e23d3d" stroke-width="3.5"/><line x1="270" y1="134" x2="200" y2="164" stroke="#7b4ddb" stroke-width="3.5"/>
+<line x1="190" y1="158" x2="80" y2="188" stroke="#e23d3d" stroke-width="3.5" marker-end="url(#f2)"/>
+<text x="46" y="80" text-anchor="middle" font-family="Nunito Sans,sans-serif" font-weight="700" font-size="13" fill="currentColor">Soleil</text>
+<text x="335" y="110" text-anchor="middle" font-family="Nunito Sans,sans-serif" font-weight="700" font-size="13" fill="#e8462a">Les couleurs</text>
+<text x="335" y="126" text-anchor="middle" font-family="Nunito Sans,sans-serif" font-weight="700" font-size="13" fill="#e8462a">s'écartent</text>
+</svg>
+        <div class="t-points"><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        <div class="t-nav"><span>Précédent</span><span>2 / 4</span><b>Suivant</b></div>
+      </div>
+    </div>
+    <ol class="legendes">
+      <li><h3>Le concept</h3><p>Une phrase claire qui dit ce que c'est vraiment, avant tout le reste.</p></li>
+      <li><h3>Le dessin</h3><p>Un schéma qui s'ajoute étape par étape : tu vois le mécanisme au lieu de l'imaginer.</p></li>
+      <li><h3>La voix</h3><p>Appuie sur « Écouter Emma » : elle lit la fiche et fait avancer les étapes. Pas besoin de lire.</p></li>
+      <li><h3>Et si…&nbsp;?</h3><p>Un curseur montre ce qui change quand on modifie un facteur, puis une petite question vérifie que c'est clair.</p></li>
+    </ol>
   </div>
 </div></section>
 
-<section class="bande teinte"><div class="wrap">
+<section id="plus" class="bande teinte"><div class="wrap">
   <div class="grille">
     <div><h2>À ton niveau</h2><p>Choisis comment Emma t'explique : tout simplement, plus en détail, ou comme à un connaisseur.</p><div class="niveaux"><span>Simple</span><span>Poussé</span><span>Avancé</span></div></div>
     <div><h2>Pour aller plus loin</h2><p>Chaque fiche se termine par les questions qu'on se pose ensuite. Le champagne&nbsp;? Emma te propose aussi comment le conserver et comment bien le servir.</p></div>
@@ -64,15 +112,47 @@
   </div>
 </div></section>
 
-<section class="bande"><div class="wrap narrow" style="text-align:center">
-  <h2>Gratuit, sur ton téléphone</h2>
-  <p>Ouvre l'app dans ton navigateur et ajoute-la à ton écran d'accueil. Tu entres avec ton compte L’Établi, le même pour toutes nos apps. Rien à payer.</p>
-  <p><a class="btn plein" href="https://app.lepourquoi.ai">Essayer Le Pourquoi</a></p>
+<section id="personnage" class="bande"><div class="wrap">
+  <div class="emma-grand"><div class="portrait"><img src="https://compte.letabli.ai/personnages/emma.webp" alt="" width="320" height="320" decoding="async" style="border-radius:50%;object-fit:cover"></div><div class="prose">
+    <h2>Emma</h2>
+    <p>Emma, c'est la curieuse sympathique qui adore savoir comment tout marche : pourquoi le pain lève, comment le frigo fait du froid, d'où vient le tonnerre.</p>
+    <p>Son truc : aller droit à l'idée qui fait « ah, c'est donc ça&nbsp;! », puis te la montrer avec un dessin plutôt qu'un long texte. Elle te tutoie, parle simplement et peut tout te lire à voix haute.</p>
+    <div class="dit grande"><div class="bulle"><small>Emma</small>Une thermopompe, c'est un frigo qui marche à l'envers.</div></div>
+  </div></div>
+</div></section>
+
+<section id="confiance" class="bande teinte"><div class="wrap">
+  <h2>Ce que tu demandes reste à toi</h2>
+  <div class="grille">
+    <div class="bloc"><h3>Tes fiches ne sont pas liées à ton compte</h3><p>Ton compte sert à te reconnaître. Ta question sert seulement à préparer la fiche, gardée sans aucun lien avec toi.</p></div>
+    <div class="bloc"><h3>Ton historique reste sur ton appareil</h3><p>Tes dernières fiches, ton niveau et ta préférence pour la voix sont gardés dans ton navigateur.</p></div>
+    <div class="bloc"><h3>Ni pub ni pistage</h3><p>Aucun témoin publicitaire, aucun pistage d'une app à l'autre, et ton adresse IP n'est pas conservée.</p></div>
+  </div>
+  <p class="suite-lien"><a href="/confidentialite">Tout savoir sur tes données</a></p>
+</div></section>
+
+<section id="prix" class="bande"><div class="wrap texte" style="text-align:center">
+  <h2>Gratuit. Pour vrai.</h2>
+  <p>Le Pourquoi ne coûte rien. Ouvre l'app dans ton navigateur et ajoute-la à ton écran d'accueil. Tu entres avec ton compte, le même pour toutes les apps de L’Établi.</p>
+  <p class="petit">Pour garder l'app gratuite, il y a une limite raisonnable de nouvelles fiches par jour et par appareil.</p>
+  <p><a class="btn marque" href="https://app.lepourquoi.ai">Commencer</a></p>
+</div></section>
+
+<section id="questions" class="bande teinte"><div class="wrap texte">
+  <h2>Questions</h2>
+  <details><summary>C'est vraiment gratuit ?</summary><p>Oui. Le Pourquoi est gratuit; tu entres avec ton compte, le même pour toutes les apps de L’Établi. Pour garder l'app gratuite, il y a une limite raisonnable de nouvelles fiches par jour et par appareil ; les notions déjà demandées par d'autres ne comptent pas.</p></details><details><summary>Dois-je créer un compte ?</summary><p>Oui. Tu entres avec ton compte, le même pour toutes les apps de L’Établi; si tu n'en as pas encore, tu le crées en ouvrant l'app. Tes fiches ne sont pas liées à ton compte, et ton historique reste sur ton appareil.</p></details><details><summary>Comment faire parler Emma ?</summary><p>Sur une fiche, appuie sur le bouton « Écouter Emma ». Elle utilise la voix française installée sur ton téléphone ou ton ordinateur. Après la première fois, elle lit automatiquement les nouvelles fiches. Si tu n'entends rien, vérifie que le son de l'appareil est activé.</p></details><details><summary>Quelle différence entre Simple, Poussé et Avancé ?</summary><p>Simple : des mots de tous les jours, aucun jargon. Poussé : plus de détails et le vrai vocabulaire expliqué. Avancé : les termes techniques, des chiffres et les nuances, pour un connaisseur. Ton choix est retenu.</p></details><details><summary>Les explications sont-elles fiables ?</summary><p>Elles sont rédigées par une intelligence artificielle guidée pour être exacte, mais une fiche d'une minute simplifie forcément et peut contenir une erreur. Pour la santé, l'argent ou le droit, vérifie auprès d'un professionnel ou d'une source officielle.</p></details><details><summary>Est-ce que je peux poser n'importe quelle question ?</summary><p>Toute chose qu'on peut expliquer : un objet, un phénomène, une notion d'économie ou de science, un geste pratique (conserver, choisir, utiliser). Emma ne répond pas aux demandes qui visent à nuire.</p></details><details><summary>Ça marche sans Internet ?</summary><p>L'app s'ouvre hors ligne et garde tes dernières fiches, mais une nouvelle question demande une connexion.</p></details><details><summary>Comment installer l'app sur mon téléphone ?</summary><p>Sur iPhone, ouvre <a href="https://app.lepourquoi.ai">app.lepourquoi.ai</a> dans Safari, touche le bouton Partager, puis « Sur l'écran d'accueil ». Sur Android, ouvre l'adresse dans Chrome, puis le menu ⋮ et « Installer l'application ».</p></details>
+</div></section>
+
+<section id="appel" class="bande appel"><div class="wrap texte" style="text-align:center">
+  <div class="portrait petit"><img src="https://compte.letabli.ai/personnages/emma.webp" alt="" width="320" height="320" decoding="async" style="border-radius:50%;object-fit:cover"></div>
+  <p class="phrase">« Alors, qu'est-ce qui t'intrigue aujourd'hui&nbsp;? »</p>
+  <p><a class="btn marque" href="https://app.lepourquoi.ai">Commencer</a></p>
 </div></section>
 </main>
-<footer><div class="wrap">
-  <span>© 2026 Le Pourquoi, une app de L’Établi · Gratuite, avec ton compte L’Établi</span>
-  <nav aria-label="Pied de page"><a href="/questions">Questions</a><a href="/confidentialite">Confidentialité</a><a href="/conditions">Conditions</a><a href="mailto:bonjour@lepourquoi.ai">bonjour@lepourquoi.ai</a></nav>
+<footer id="pied"><div class="wrap">
+  <div class="signature"><svg class="symbole" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.5 11a6.5 6.5 0 1 1 9.4 5.8c-2 1-2.9 2.3-2.9 4.4" fill="none" stroke="var(--marque)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="27.6" r="3.1" fill="#E8743B"/></svg><div><div class="sig-nom">Le Pourquoi</div><div class="sig-etabli"><svg width="12" height="12" viewBox="0 0 64 64" aria-hidden="true"><rect x="40" y="10" width="14" height="10" rx="2" fill="#B8954A"/><rect x="45" y="20" width="4" height="4" fill="#B8954A"/><rect x="4" y="24" width="56" height="9" rx="2.5" fill="currentColor"/><rect x="10" y="33" width="6" height="25" rx="1.5" fill="currentColor"/><rect x="48" y="33" width="6" height="25" rx="1.5" fill="currentColor"/><rect x="16" y="45" width="32" height="4" fill="currentColor"/><rect x="2" y="27" width="5" height="12" rx="1.5" fill="#B8954A"/></svg>Fait à L’Établi</div></div></div>
+  <nav class="liens-pied" aria-label="Pied de page"><a href="/confidentialite">Confidentialité</a><a href="/conditions">Conditions</a><a href="mailto:bonjour@lepourquoi.ai">Nous écrire</a><a href="https://letabli.ai/#apps">Les autres apps de L’Établi</a></nav>
+  <p class="copy">© 2026 L’Établi. Fait au Québec.</p>
 </div></footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
-:root{color-scheme:light dark;--bg:light-dark(#ffffff,#141310);--ink:light-dark(#191714,#f4f1ea);--soft:light-dark(#5d584f,#b9b2a5);--sun:light-dark(#ffd84d,#3a300c);--sun2:light-dark(#ffe98f,#4a3d10);--sunInk:light-dark(#191714,#ffe27a);--card:light-dark(#ffffff,#1f1d19);--line:light-dark(#e9e3d3,#36322b);--tint:light-dark(#fff7d6,#2a2618);--coral:light-dark(#e8462a,#ff7a5c)}
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#141310);--ink:light-dark(#191714,#f4f1ea);--soft:light-dark(#5d584f,#b9b2a5);--sun:light-dark(#ffd84d,#3a300c);--sun2:light-dark(#ffe98f,#4a3d10);--sunInk:light-dark(#191714,#ffe27a);--card:light-dark(#ffffff,#1f1d19);--line:light-dark(#e9e3d3,#36322b);--tint:light-dark(#fff7d6,#2a2618);--coral:light-dark(#e8462a,#ff7a5c);--marque:light-dark(#4D7A12,#619917);--surMarque:light-dark(#ffffff,#141310);--douce:light-dark(#E6ECDE,#232a1c)}
 *{box-sizing:border-box;min-width:0}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Nunito Sans",system-ui,sans-serif;overflow-x:clip}
 h1,h2,h3{font-family:Rubik,system-ui,sans-serif;line-height:1.1;margin:0 0 .5em;text-wrap:balance}
@@ -12,7 +12,7 @@ a{color:inherit}
 header.nav{background:var(--sun);color:var(--sunInk)}
 header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:10px;font:700 19px Rubik,sans-serif;text-decoration:none}
-.logo svg,.logo img{width:34px;height:34px}
+.logo svg,.logo img{width:32px;height:32px;flex:none}
 nav.liens{display:flex;gap:4px;flex-wrap:wrap}
 nav.liens a{text-decoration:none;font-weight:700;font-size:15px;padding:8px 12px;border-radius:999px}
 nav.liens a:hover,nav.liens a[aria-current]{background:var(--sun2)}
@@ -50,9 +50,70 @@ summary{cursor:pointer;font:700 18px Rubik,sans-serif;list-style-position:outsid
 details p{margin:10px 0 0}
 .emma-grand{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:32px;align-items:center}
 .emma-grand svg,.emma-grand img{width:100%;height:auto}
-footer{border-top:1.5px solid var(--line);padding:32px 0 48px;color:var(--soft);font-size:15px}
-footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-footer nav{display:flex;gap:16px;flex-wrap:wrap}
-footer a{text-decoration:none}footer a:hover{text-decoration:underline}
-@media(max-width:760px){.hero .wrap,.emma-grand{grid-template-columns:1fr}.emma-grand svg,.emma-grand img{max-width:180px}}
+
 @media(prefers-reduced-motion:no-preference){.carte{animation:monte .6s ease-out both}@keyframes monte{from{transform:translateY(12px);opacity:0}}}
+
+/* ---- Gabarit commun des sites de L’Établi ---- */
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+section[id]{scroll-margin-top:12px}
+.texte{max-width:690px}
+.droite{display:flex;align-items:center;gap:14px}
+.connexion{font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap}
+.connexion:hover{text-decoration:underline}
+.btn.marque{background:var(--marque);color:var(--surMarque);border-color:var(--marque)}
+.btn.marque:hover{filter:brightness(1.08)}
+.btn.petit{min-height:40px;padding:0 18px;font-size:15px}
+.hero .btn.marque{background:var(--marque);color:var(--surMarque);border-color:var(--marque)}
+details.menu{display:none;position:relative;border:0;padding:0;margin:0;background:none}
+details.menu summary{list-style:none;font:700 15px "Nunito Sans",sans-serif;padding:8px 12px;border-radius:999px;border:1.5px solid currentColor}
+details.menu summary::-webkit-details-marker{display:none}
+details.menu nav{position:absolute;left:0;top:calc(100% + 8px);z-index:5;display:flex;flex-direction:column;min-width:210px;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.16)}
+details.menu nav a{text-decoration:none;font-weight:700;padding:10px 12px;border-radius:10px}
+details.menu nav a:hover{background:var(--tint)}
+.etapes{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.etapes li{display:flex;gap:14px;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:20px}
+.etapes .num{flex:none;width:38px;height:38px;border-radius:50%;background:var(--marque);color:var(--surMarque);display:grid;place-items:center;font:800 18px Rubik,sans-serif}
+.etapes p{margin:0;color:var(--soft)}
+.ecran-app{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;margin-top:24px}
+.telephone{background:var(--card);border:8px solid var(--ink);border-radius:34px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.16);font-size:14px}
+.t-haut{background:var(--sun);color:var(--sunInk);padding:16px 14px 14px}
+.t-marque{display:flex;align-items:center;gap:8px;font:700 15px Rubik,sans-serif;margin-bottom:10px}
+.t-marque svg{width:22px;height:22px}
+.t-champ{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--card);color:var(--ink);border-radius:12px;padding:6px 6px 6px 12px}
+.t-champ b{background:var(--ink);color:var(--bg);border-radius:9px;padding:6px 10px;font-size:13px;white-space:nowrap}
+.t-haut .niveaux{margin-top:10px}.t-haut .niveaux span{font-size:12.5px;padding:2px 10px;border-color:color-mix(in srgb,var(--sunInk) 35%,transparent)}
+.t-fiche{padding:14px}
+.t-titre{font:800 20px Rubik,sans-serif;margin-bottom:8px}
+.t-concept{border-left:4px solid var(--coral);padding-left:10px;font:700 15px/1.3 Rubik,sans-serif}
+.t-concept small{display:block;color:var(--coral);font-size:11.5px}
+.t-ecoute{display:inline-block;margin:10px 0 0;border:1.5px solid var(--line);border-radius:999px;padding:3px 12px;font-weight:700;font-size:13px}
+.t-fiche svg.schema{display:block;width:100%;height:auto;margin-top:10px;background:light-dark(#fbf8ef,#191814);border-radius:12px}
+.t-points{display:flex;gap:5px;margin:10px 0 8px}.t-points i{flex:1;height:5px;border-radius:3px;background:var(--line)}.t-points i.on{background:var(--coral)}
+.t-nav{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:13px;color:var(--soft)}
+.t-nav b{background:var(--ink);color:var(--bg);border-radius:9px;padding:5px 12px}
+.legendes{margin:0;padding:0;list-style:none;counter-reset:l;display:grid;gap:20px}
+.legendes li{counter-increment:l;position:relative;padding-left:52px}
+.legendes li::before{content:counter(l);position:absolute;left:0;top:-2px;width:36px;height:36px;border-radius:50%;border:2px solid var(--marque);color:var(--marque);display:grid;place-items:center;font:800 16px Rubik,sans-serif}
+.legendes h3{margin-bottom:4px}.legendes p{margin:0;color:var(--soft)}
+.portrait{border-radius:50%;background:var(--douce);padding:10px;aspect-ratio:1}
+.portrait img{display:block;width:100%;height:100%}
+.portrait.petit{width:112px;margin:0 auto 14px;padding:6px}
+.dit.grande .bulle{font-size:21px;max-width:30ch}
+.suite-lien{margin:20px 0 0;font-weight:700}
+.petit{font-size:15px;color:var(--soft)}
+.appel{background:var(--sun);color:var(--sunInk)}
+.appel .phrase{font:700 clamp(22px,3vw,30px)/1.25 Rubik,sans-serif;margin:0 0 20px}
+#confiance .bloc p{margin-top:4px}
+footer#pied{background:var(--card);border-top:1.5px solid var(--line);padding:36px 0 44px;color:var(--soft);font-size:15px}
+footer#pied .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.signature{display:flex;align-items:center;gap:12px}
+.signature svg.symbole{width:36px;height:36px}
+.sig-nom{font:800 22px/1.1 Rubik,sans-serif;color:var(--ink)}
+.sig-etabli{display:flex;align-items:center;gap:5px;margin-top:4px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.liens-pied{display:flex;gap:18px;flex-wrap:wrap}
+footer#pied a{text-decoration:none;color:var(--ink)}footer#pied a:hover{text-decoration:underline}
+.copy{flex-basis:100%;margin:0;font-size:14px}
+@media(max-width:900px){header.nav nav.liens{display:none}details.menu{display:block}}
+@media(max-width:760px){.hero .wrap,.emma-grand,.ecran-app{grid-template-columns:1fr}.emma-grand .portrait{max-width:200px}.telephone{max-width:340px;margin:0 auto}}
+@media(max-width:480px){header.nav .wrap{gap:10px}.logo span{display:none}.droite{gap:10px}.btn.petit{padding:0 14px}}
