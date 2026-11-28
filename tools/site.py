@@ -8,7 +8,7 @@ APP = 'https://app.lepourquoi.ai'
 COURRIEL = 'bonjour@lepourquoi.ai'
 MAJ = '25 novembre 2026'
 
-EMMA = '''<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M9 42 Q5 12 32 9 Q59 12 55 42 L57 60 Q47 56 49 44 L15 44 Q17 56 7 60 Z" fill="#8a3b1f"/><circle cx="32" cy="34" r="21" fill="#f2c49b"/><path d="M11 33 Q13 13 32 12 Q51 13 53 33 Q47 21 34 20 Q23 21 18 27 Q15 30 11 33 Z" fill="#8a3b1f"/><circle cx="11.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="52.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="11.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="52.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="24" cy="36" r="2.3" fill="#191714"/><circle cx="40" cy="36" r="2.3" fill="#191714"/><path d="M20 31.5q4-2.5 8 0M36 31.5q4-2.5 8 0" fill="none" stroke="#5a2a14" stroke-width="1.8" stroke-linecap="round"/><path d="M25 46q7 6 14 0" fill="none" stroke="#191714" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="44" r="2.8" fill="#e8462a" opacity=".35"/><circle cx="46" cy="44" r="2.8" fill="#e8462a" opacity=".35"/></svg>'''
+EMMA = '''<img src="/emma.webp" alt="" width="320" height="320" decoding="async" style="border-radius:50%;object-fit:cover">'''
 
 PAGES = [('/', 'Accueil'), ('/comment-ca-marche', 'Comment ça marche'), ('/emma', 'Emma'), ('/questions', 'Questions')]
 
@@ -63,7 +63,7 @@ SCHEMA = '''<svg class="schema" viewBox="0 0 400 200" role="img" aria-label="Exe
 ACCUEIL = f'''<section class="hero"><div class="wrap">
   <div>
     <h1>C'est quoi, et comment ça marche&nbsp;?</h1>
-    <p class="lead">Tape une chose qui t'intrigue. Emma te l'explique en une minute, avec un dessin qui se construit sous tes yeux, et il te le lit à voix haute.</p>
+    <p class="lead">Tape une chose qui t'intrigue. Emma te l'explique en une minute, avec un dessin qui se construit sous tes yeux, et elle te le lit à voix haute.</p>
     <div class="actions"><a class="btn plein" href="{APP}">Ouvrir l'app</a><a class="btn clair" href="/comment-ca-marche">Comment ça marche</a></div>
   </div>
   <div class="carte" aria-label="Exemple de fiche">

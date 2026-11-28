@@ -7,7 +7,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const num = (v, lo, hi, d) => { v = Number(v); return Number.isFinite(v) ? Math.min(hi, Math.max(lo, v)) : d; };
 const VOIX = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
 if (VOIX) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => {}; }
-const EMMA = `<svg class="emma" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 42 Q5 12 32 9 Q59 12 55 42 L57 60 Q47 56 49 44 L15 44 Q17 56 7 60 Z" fill="#8a3b1f"/><circle cx="32" cy="34" r="21" fill="#f2c49b"/><path d="M11 33 Q13 13 32 12 Q51 13 53 33 Q47 21 34 20 Q23 21 18 27 Q15 30 11 33 Z" fill="#8a3b1f"/><circle cx="11.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="52.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="11.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="52.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="24" cy="36" r="2.3" fill="#191714"/><circle cx="40" cy="36" r="2.3" fill="#191714"/><path d="M20 31.5q4-2.5 8 0M36 31.5q4-2.5 8 0" fill="none" stroke="#5a2a14" stroke-width="1.8" stroke-linecap="round"/><path d="M25 46q7 6 14 0" fill="none" stroke="#191714" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="44" r="2.8" fill="#e8462a" opacity=".35"/><circle cx="46" cy="44" r="2.8" fill="#e8462a" opacity=".35"/></svg>`;
+const EMMA = `<img class="emma" src="/emma.webp" alt="" width="320" height="320" decoding="async">`;
 const COL = {sun:'#f5b700',sky:'#5fb3e8',blue:'#2f6fd6',red:'#e23d3d',orange:'#f08a24',violet:'#7b4ddb',green:'#2e9d5b',brown:'#8a5a2b',gray:'#9a948a',pink:'#e0569b',coral:'#e8462a',ink:'currentColor'};
 const CHIPS = ['le Wi-Fi','un frigo','l\'inflation','un vaccin à ARN','le GPS','un taux d\'intérêt'];
 const POOL = window.TT_POOL || [];

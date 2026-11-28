@@ -132,3 +132,6 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 .emma.parle{animation:parle .5s ease-in-out infinite}
 @keyframes parle{50%{transform:translateY(-3px) rotate(-3deg)}}
 @media(max-width:600px){.ecoute{margin-left:0;width:100%;justify-content:center}}
+
+/* Portrait d'Emma */
+img.emma{border-radius:50%;object-fit:cover;aspect-ratio:1}

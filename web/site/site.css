@@ -12,7 +12,7 @@ a{color:inherit}
 header.nav{background:var(--sun);color:var(--sunInk)}
 header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:10px;font:700 19px Rubik,sans-serif;text-decoration:none}
-.logo svg{width:34px;height:34px}
+.logo svg,.logo img{width:34px;height:34px}
 nav.liens{display:flex;gap:4px;flex-wrap:wrap}
 nav.liens a{text-decoration:none;font-weight:700;font-size:15px;padding:8px 12px;border-radius:999px}
 nav.liens a:hover,nav.liens a[aria-current]{background:var(--sun2)}
@@ -29,7 +29,7 @@ nav.liens a:hover,nav.liens a[aria-current]{background:var(--sun2)}
 .carte .tag{display:inline-block;background:#ffe7e1;color:#c43a20;border-radius:999px;padding:3px 10px;font-weight:700;font-size:13px}
 .carte h3{font-size:26px;margin:10px 0 12px}
 .dit{display:flex;gap:12px;align-items:flex-start}
-.dit svg{width:52px;height:52px;flex:none}
+.dit svg,.dit img{width:52px;height:52px;flex:none}
 .bulle{background:var(--tint);border-radius:16px;padding:10px 14px;font:700 18px/1.3 Rubik,sans-serif}
 .bulle small{display:block;color:var(--coral);font-size:12.5px;margin-bottom:2px}
 .carte svg.schema{display:block;width:100%;height:auto;margin-top:14px;background:light-dark(#fbf8ef,#191814);border-radius:14px}
@@ -49,10 +49,10 @@ details{border:1.5px solid var(--line);border-radius:14px;padding:14px 18px;marg
 summary{cursor:pointer;font:700 18px Rubik,sans-serif;list-style-position:outside}
 details p{margin:10px 0 0}
 .emma-grand{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:32px;align-items:center}
-.emma-grand svg{width:100%;height:auto}
+.emma-grand svg,.emma-grand img{width:100%;height:auto}
 footer{border-top:1.5px solid var(--line);padding:32px 0 48px;color:var(--soft);font-size:15px}
 footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 footer nav{display:flex;gap:16px;flex-wrap:wrap}
 footer a{text-decoration:none}footer a:hover{text-decoration:underline}
-@media(max-width:760px){.hero .wrap,.emma-grand{grid-template-columns:1fr}.emma-grand svg{max-width:180px}}
+@media(max-width:760px){.hero .wrap,.emma-grand{grid-template-columns:1fr}.emma-grand svg,.emma-grand img{max-width:180px}}
 @media(prefers-reduced-motion:no-preference){.carte{animation:monte .6s ease-out both}@keyframes monte{from{transform:translateY(12px);opacity:0}}}

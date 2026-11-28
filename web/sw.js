@@ -1,8 +1,8 @@
 // Service worker du Pourquoi : garde l'app en cache pour qu'elle s'ouvre vite, et
 // propose la nouvelle version quand une mise à jour est publiée.
 // Changez VERSION à chaque déploiement pour déclencher la mise à jour chez les gens.
-const VERSION = 'lp-2026-11-27-emma2';
-const FICHIERS = ['/', '/index.html', '/app.css', '/app.js', '/config.js', '/holdingai.js', '/compte.js', '/demo.js', '/manifest.webmanifest',
+const VERSION = 'lp-2026-11-27-portrait';
+const FICHIERS = ['/', '/index.html', '/app.css', '/app.js', '/config.js', '/holdingai.js', '/compte.js', '/demo.js', '/emma.webp', '/manifest.webmanifest',
   '/icons/icon-192.png', '/icons/icon-512.png', '/icons/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
