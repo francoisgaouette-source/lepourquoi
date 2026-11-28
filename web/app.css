@@ -104,14 +104,14 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 
 @media(max-width:600px){.lab{font-size:16px}.count{font-size:13px;text-align:center}}
 
-.simon{width:44px;height:44px;flex:none;display:block}
-.acct .simon{width:26px;height:26px}
+.emma{width:44px;height:44px;flex:none;display:block}
+.acct .emma{width:26px;height:26px}
 .acct{gap:8px}
 .qui{display:flex;align-items:center;gap:8px}
-.qui .simon{width:30px;height:30px;animation:hop 1s ease-in-out infinite}
+.qui .emma{width:30px;height:30px;animation:hop 1s ease-in-out infinite}
 @keyframes hop{50%{transform:translateY(-4px)}}
 .dit{display:flex;gap:12px;align-items:flex-start;margin:0 0 12px}
-.dit .simon{width:56px;height:56px;margin-top:4px}
+.dit .emma{width:56px;height:56px;margin-top:4px}
 .bulle{position:relative;background:var(--tint);border-radius:16px;padding:10px 16px 12px;flex:1}
 .bulle::before{content:"";position:absolute;left:-8px;top:18px;border:8px solid transparent;border-left:0;border-right-color:var(--tint)}
 .bulle small{display:block;font:700 13px Rubik,sans-serif;color:var(--coral);margin-bottom:2px}
@@ -129,6 +129,6 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 .ecoute{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;background:var(--coral);color:#fff;font:700 16px Rubik,sans-serif;min-height:48px;padding:0 22px 0 18px;margin:0 0 16px 68px}
 .ecoute .ico{font-size:14px;width:16px;text-align:center}
 .ecoute[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.simon.parle{animation:parle .5s ease-in-out infinite}
+.emma.parle{animation:parle .5s ease-in-out infinite}
 @keyframes parle{50%{transform:translateY(-3px) rotate(-3deg)}}
 @media(max-width:600px){.ecoute{margin-left:0;width:100%;justify-content:center}}

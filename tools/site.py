@@ -8,7 +8,7 @@ APP = 'https://app.lepourquoi.ai'
 COURRIEL = 'bonjour@lepourquoi.ai'
 MAJ = '25 novembre 2026'
 
-SIMON = '''<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M9 42 Q5 12 32 9 Q59 12 55 42 L57 60 Q47 56 49 44 L15 44 Q17 56 7 60 Z" fill="#8a3b1f"/><circle cx="32" cy="34" r="21" fill="#f2c49b"/><path d="M11 33 Q13 13 32 12 Q51 13 53 33 Q47 21 34 20 Q23 21 18 27 Q15 30 11 33 Z" fill="#8a3b1f"/><circle cx="11.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="52.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="11.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="52.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="24" cy="36" r="2.3" fill="#191714"/><circle cx="40" cy="36" r="2.3" fill="#191714"/><path d="M20 31.5q4-2.5 8 0M36 31.5q4-2.5 8 0" fill="none" stroke="#5a2a14" stroke-width="1.8" stroke-linecap="round"/><path d="M25 46q7 6 14 0" fill="none" stroke="#191714" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="44" r="2.8" fill="#e8462a" opacity=".35"/><circle cx="46" cy="44" r="2.8" fill="#e8462a" opacity=".35"/></svg>'''
+EMMA = '''<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M9 42 Q5 12 32 9 Q59 12 55 42 L57 60 Q47 56 49 44 L15 44 Q17 56 7 60 Z" fill="#8a3b1f"/><circle cx="32" cy="34" r="21" fill="#f2c49b"/><path d="M11 33 Q13 13 32 12 Q51 13 53 33 Q47 21 34 20 Q23 21 18 27 Q15 30 11 33 Z" fill="#8a3b1f"/><circle cx="11.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="52.5" cy="38" r="3.6" fill="#f2c49b"/><circle cx="11.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="52.5" cy="43" r="1.8" fill="#e8462a"/><circle cx="24" cy="36" r="2.3" fill="#191714"/><circle cx="40" cy="36" r="2.3" fill="#191714"/><path d="M20 31.5q4-2.5 8 0M36 31.5q4-2.5 8 0" fill="none" stroke="#5a2a14" stroke-width="1.8" stroke-linecap="round"/><path d="M25 46q7 6 14 0" fill="none" stroke="#191714" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="44" r="2.8" fill="#e8462a" opacity=".35"/><circle cx="46" cy="44" r="2.8" fill="#e8462a" opacity=".35"/></svg>'''
 
 PAGES = [('/', 'Accueil'), ('/comment-ca-marche', 'Comment ça marche'), ('/emma', 'Emma'), ('/questions', 'Questions')]
 
@@ -33,14 +33,14 @@ def page(chemin, titre, description, corps):
 </head>
 <body>
 <header class="nav"><div class="wrap">
-  <a class="logo" href="/">{SIMON}Le Pourquoi</a>
+  <a class="logo" href="/">{EMMA}Le Pourquoi</a>
   <nav class="liens" aria-label="Site">{nav}<a href="{APP}">Ouvrir l'app</a></nav>
 </div></header>
 <main>
 {corps}
 </main>
 <footer><div class="wrap">
-  <span>© {datetime.date.today().year} Le Pourquoi, une app de HoldingAI · Gratuite, avec ton compte HoldingAI</span>
+  <span>© {datetime.date.today().year} Le Pourquoi, une app de L’Établi · Gratuite, avec ton compte L’Établi</span>
   <nav aria-label="Pied de page"><a href="/questions">Questions</a><a href="/confidentialite">Confidentialité</a><a href="/conditions">Conditions</a><a href="mailto:{COURRIEL}">{COURRIEL}</a></nav>
 </div></footer>
 </body>
@@ -69,7 +69,7 @@ ACCUEIL = f'''<section class="hero"><div class="wrap">
   <div class="carte" aria-label="Exemple de fiche">
     <span class="tag">Surprise du jour</span>
     <h3>Un arc-en-ciel</h3>
-    <div class="dit">{SIMON}<div class="bulle"><small>Emma t'explique le concept</small>Chaque goutte de pluie trie la lumière par couleur et te la renvoie.</div></div>
+    <div class="dit">{EMMA}<div class="bulle"><small>Emma t'explique le concept</small>Chaque goutte de pluie trie la lumière par couleur et te la renvoie.</div></div>
     {SCHEMA}
   </div>
 </div></section>
@@ -94,7 +94,7 @@ ACCUEIL = f'''<section class="hero"><div class="wrap">
 
 <section class="bande"><div class="wrap narrow" style="text-align:center">
   <h2>Gratuit, sur ton téléphone</h2>
-  <p>Ouvre l'app dans ton navigateur et ajoute-la à ton écran d'accueil. Tu entres avec ton compte HoldingAI, le même pour toutes nos apps. Rien à payer.</p>
+  <p>Ouvre l'app dans ton navigateur et ajoute-la à ton écran d'accueil. Tu entres avec ton compte L’Établi, le même pour toutes nos apps. Rien à payer.</p>
   <p><a class="btn plein" href="{APP}">Essayer Le Pourquoi</a></p>
 </div></section>'''
 
@@ -116,18 +116,18 @@ COMMENT = f'''<section class="bande"><div class="wrap narrow prose">
   <p><a class="btn plein" href="{APP}">Ouvrir l'app</a></p>
 </div></section>'''
 
-SIMON_PAGE = f'''<section class="bande"><div class="wrap">
-  <div class="simon-grand">{SIMON}<div class="prose">
+EMMA_PAGE = f'''<section class="bande"><div class="wrap">
+  <div class="emma-grand">{EMMA}<div class="prose">
     <h1>Voici Emma</h1>
     <p>Emma est le personnage du Pourquoi. C'est une curieuse sympathique qui adore savoir comment tout marche : pourquoi le pain lève, comment le frigo fait du froid, d'où vient le tonnerre.</p>
     <p>Son truc : aller droit à l'idée qui fait « ah, c'est donc ça&nbsp;! », puis le montrer avec un dessin plutôt qu'un long texte. Elle tutoie, elle parle simplement, et elle peut tout te lire à voix haute.</p>
-    <p>Emma fait partie de la famille des personnages HoldingAI, avec Catherine du Commis, Louis-Philippe du Tiroir, Colette du Plumeau et les autres.</p>
+    <p>Emma fait partie de la famille des personnages de L’Établi, avec Catherine du Commis, Louis-Philippe du Tiroir, Colette du Plumeau et les autres.</p>
     <p><a class="btn plein" href="{APP}">Poser une question à Emma</a></p>
   </div></div>
 </div></section>'''
 
 QR = [
- ("C'est vraiment gratuit ?", "Oui. Le Pourquoi est gratuit; tu entres avec ton compte HoldingAI, le même pour toutes les apps HoldingAI. Pour garder l'app gratuite, il y a une limite raisonnable de nouvelles fiches par jour et par appareil ; les notions déjà demandées par d'autres ne comptent pas."),
+ ("C'est vraiment gratuit ?", "Oui. Le Pourquoi est gratuit; tu entres avec ton compte L’Établi, le même pour toutes les apps de L’Établi. Pour garder l'app gratuite, il y a une limite raisonnable de nouvelles fiches par jour et par appareil ; les notions déjà demandées par d'autres ne comptent pas."),
  ("Dois-je créer un compte ?", "Non. Ouvre l'app et pose ta question. Ton historique reste sur ton appareil."),
  ("Comment faire parler Emma ?", "Sur une fiche, appuie sur le bouton « Écouter Emma ». Elle utilise la voix française installée sur ton téléphone ou ton ordinateur. Après la première fois, elle lit automatiquement les nouvelles fiches. Si tu n'entends rien, vérifie que le son de l'appareil est activé."),
  ("Quelle différence entre Simple, Poussé et Avancé ?", "Simple : des mots de tous les jours, aucun jargon. Poussé : plus de détails et le vrai vocabulaire expliqué. Avancé : les termes techniques, des chiffres et les nuances, pour un connaisseur. Ton choix est retenu."),
@@ -142,8 +142,8 @@ CONFID = f'''<section class="bande"><div class="wrap narrow prose">
   <h1>Confidentialité</h1>
   <p class="maj">Dernière mise à jour : {MAJ}</p>
   <p>Le Pourquoi est conçu pour fonctionner avec le moins de données possible.</p>
-  <h2>Ton compte HoldingAI</h2>
-  <p>Tu entres dans Le Pourquoi avec ton compte HoldingAI, le même pour toutes les apps HoldingAI. Nous recevons l'identifiant de ce compte et le numéro de cellulaire qui y est associé, pour te reconnaître. Tes fiches ne sont pas reliées à ton compte.</p>
+  <h2>Ton compte L’Établi</h2>
+  <p>Tu entres dans Le Pourquoi avec ton compte L’Établi, le même pour toutes les apps de L’Établi. Nous recevons l'identifiant de ce compte et le numéro de cellulaire qui y est associé, pour te reconnaître. Tes fiches ne sont pas reliées à ton compte.</p>
   <h2>Ce que nous ne recueillons pas</h2>
   <ul><li>Aucun nom ni courriel dans les fiches.</li><li>Aucun témoin publicitaire ni pistage d'une app à l'autre.</li><li>Aucune adresse IP conservée.</li></ul>
   <h2>Ce qui passe par nos serveurs</h2>
@@ -152,8 +152,8 @@ CONFID = f'''<section class="bande"><div class="wrap narrow prose">
     <li><strong>Une empreinte anonyme</strong> calculée à partir de ton adresse IP (l'adresse elle-même n'est pas gardée), avec l'heure de la demande, uniquement pour appliquer la limite quotidienne. Ces traces servent à compter les demandes des dernières 24 heures.</li>
   </ul>
   <h2>Ce qui reste sur ton appareil</h2>
-  <p>Ton historique de fiches, ton niveau préféré et ta préférence pour la voix de Emma sont gardés dans ton navigateur. Tu peux les effacer en effaçant les données du site dans ton navigateur.</p>
-  <h2>La voix de Emma</h2>
+  <p>Ton historique de fiches, ton niveau préféré et ta préférence pour la voix d'Emma sont gardés dans ton navigateur. Tu peux les effacer en effaçant les données du site dans ton navigateur.</p>
+  <h2>La voix d'Emma</h2>
   <p>La lecture à voix haute utilise la synthèse vocale de ton appareil. Le texte lu ne nous est pas envoyé pour cette lecture.</p>
   <h2>Nos fournisseurs</h2>
   <ul><li><strong>Anthropic</strong> (Claude) rédige les fiches à partir de ta question.</li><li><strong>Supabase</strong> héberge la base de données et la fonction serveur, au Canada (région ca-central-1).</li><li><strong>Cloudflare</strong> sert le site et l'app.</li></ul>
@@ -166,21 +166,21 @@ COND = f'''<section class="bande"><div class="wrap narrow prose">
   <h1>Conditions d'utilisation</h1>
   <p class="maj">Dernière mise à jour : {MAJ}</p>
   <h2>Le service</h2>
-  <p>Le Pourquoi, une app de HoldingAI, explique des notions à l'aide de fiches rédigées par une intelligence artificielle. L'app est offerte gratuitement, telle quelle, et peut changer ou s'interrompre.</p>
+  <p>Le Pourquoi, une app de L’Établi, explique des notions à l'aide de fiches rédigées par une intelligence artificielle. L'app est offerte gratuitement, telle quelle, et peut changer ou s'interrompre.</p>
   <h2>Des explications, pas des conseils</h2>
   <p>Les fiches servent à comprendre. Elles simplifient et peuvent contenir des erreurs. Elles ne remplacent pas l'avis d'un professionnel de la santé, du droit, de la finance ou de la sécurité. N'utilise pas une fiche pour prendre une décision importante sans vérifier.</p>
   <h2>Utilisation raisonnable</h2>
   <p>Pour garder l'app gratuite, le nombre de nouvelles fiches par jour est limité. Il est interdit d'automatiser des demandes, de contourner les limites ou d'utiliser l'app pour obtenir des contenus visant à nuire.</p>
   <h2>Contenu</h2>
-  <p>Tu peux partager les fiches pour un usage personnel ou éducatif. Le nom Le Pourquoi, le personnage de Emma et le design de l'app appartiennent à HoldingAI.</p>
+  <p>Tu peux partager les fiches pour un usage personnel ou éducatif. Le nom Le Pourquoi, le personnage d'Emma et le design de l'app appartiennent à L’Établi.</p>
   <h2>Responsabilité</h2>
-  <p>Dans la mesure permise par la loi, HoldingAI n'est pas responsable des dommages découlant de l'utilisation des fiches. Ces conditions sont régies par les lois du Québec.</p>
+  <p>Dans la mesure permise par la loi, L’Établi n'est pas responsable des dommages découlant de l'utilisation des fiches. Ces conditions sont régies par les lois du Québec.</p>
   <h2>Nous joindre</h2>
   <p><a href="mailto:{COURRIEL}">{COURRIEL}</a></p>
 </div></section>'''
 
 INTROUVABLE = f'''<section class="bande"><div class="wrap narrow" style="text-align:center">
-  <div style="width:120px;margin:0 auto 12px">{SIMON}</div>
+  <div style="width:120px;margin:0 auto 12px">{EMMA}</div>
   <h1>Même Emma ne trouve pas cette page</h1>
   <p>Elle a peut-être changé d'adresse. Mais tu peux toujours lui poser ta question.</p>
   <p><a class="btn plein" href="{APP}">Ouvrir l'app</a> <a class="btn clair" href="/">Retour à l'accueil</a></p>
@@ -188,10 +188,10 @@ INTROUVABLE = f'''<section class="bande"><div class="wrap narrow" style="text-al
 
 FICHIERS = {
   'index.html': page('/', "Le Pourquoi : c'est quoi, et comment ça marche ?", "Emma t'explique n'importe quelle notion en une minute, avec un dessin qui se construit et sa voix. Gratuit.", ACCUEIL),
-  'comment-ca-marche.html': page('/comment-ca-marche', "Comment ça marche · Le Pourquoi", "Une question, une fiche d'une minute : le concept, le dessin étape par étape et la voix de Emma. Installer l'app.", COMMENT),
-  'emma.html': page('/emma', "Emma · Le Pourquoi", "Emma, la curieuse sympathique qui t'explique comment tout marche.", SIMON_PAGE),
-  'questions.html': page('/questions', "Questions · Le Pourquoi", "Gratuit, compte HoldingAI, voix de Emma, niveaux, fiabilité : les réponses aux questions fréquentes.", QUESTIONS),
-  'confidentialite.html': page('/confidentialite', "Confidentialité · Le Pourquoi", "Compte HoldingAI, sans adresse IP conservée : ce que Le Pourquoi fait de tes données.", CONFID),
+  'comment-ca-marche.html': page('/comment-ca-marche', "Comment ça marche · Le Pourquoi", "Une question, une fiche d'une minute : le concept, le dessin étape par étape et la voix d'Emma. Installer l'app.", COMMENT),
+  'emma.html': page('/emma', "Emma · Le Pourquoi", "Emma, la curieuse sympathique qui t'explique comment tout marche.", EMMA_PAGE),
+  'questions.html': page('/questions', "Questions · Le Pourquoi", "Gratuit, compte L’Établi, voix d'Emma, niveaux, fiabilité : les réponses aux questions fréquentes.", QUESTIONS),
+  'confidentialite.html': page('/confidentialite', "Confidentialité · Le Pourquoi", "Compte L’Établi, sans adresse IP conservée : ce que Le Pourquoi fait de tes données.", CONFID),
   'conditions.html': page('/conditions', "Conditions · Le Pourquoi", "Conditions d'utilisation de l'app gratuite Le Pourquoi.", COND),
   '404.html': page('/404', "Page introuvable · Le Pourquoi", "Cette page n'existe pas.", INTROUVABLE),
 }

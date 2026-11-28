@@ -48,11 +48,11 @@ section.bande.teinte{background:var(--tint)}
 details{border:1.5px solid var(--line);border-radius:14px;padding:14px 18px;margin:0 0 10px;background:var(--card)}
 summary{cursor:pointer;font:700 18px Rubik,sans-serif;list-style-position:outside}
 details p{margin:10px 0 0}
-.simon-grand{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:32px;align-items:center}
-.simon-grand svg{width:100%;height:auto}
+.emma-grand{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:32px;align-items:center}
+.emma-grand svg{width:100%;height:auto}
 footer{border-top:1.5px solid var(--line);padding:32px 0 48px;color:var(--soft);font-size:15px}
 footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 footer nav{display:flex;gap:16px;flex-wrap:wrap}
 footer a{text-decoration:none}footer a:hover{text-decoration:underline}
-@media(max-width:760px){.hero .wrap,.simon-grand{grid-template-columns:1fr}.simon-grand svg{max-width:180px}}
+@media(max-width:760px){.hero .wrap,.emma-grand{grid-template-columns:1fr}.emma-grand svg{max-width:180px}}
 @media(prefers-reduced-motion:no-preference){.carte{animation:monte .6s ease-out both}@keyframes monte{from{transform:translateY(12px);opacity:0}}}
