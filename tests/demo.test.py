@@ -10,6 +10,11 @@ threading.Thread(target=srv.serve_forever, daemon=True).start()
 ok = True
 import subprocess
 FRIGO = json.loads(subprocess.check_output(['node','-e','global.window={};eval(require("fs").readFileSync(process.argv[1],"utf8"));process.stdout.write(JSON.stringify(window.TT_DEMO[1]))',os.path.join(ROOT,'demo.js')]))
+# Compte obligatoire : on simule une personne déjà connectée (sinon l'app part vers compte.letabli.ai).
+FAUX_COMPTE = 'window.HoldingAI={demarrer:async()=>({session:{nom:"Test"},erreur:null,redirection:false}),deconnexion(){}};'
+def connecte(pg):
+    pg.route('**/holdingai.js', lambda r: r.fulfill(content_type='text/javascript', body=FAUX_COMPTE))
+    pg.route('https://compte.letabli.ai/**', lambda r: r.fulfill(content_type='text/javascript', body=''))
 def check(c, m):
     global ok
     print(('OK   ' if c else 'ÉCHEC ') + m); ok = ok and c
@@ -17,7 +22,7 @@ with sync_playwright() as p:
     b = p.chromium.launch()
     # ---- Mode démonstration
     pg = b.new_page(viewport={'width': 390, 'height': 844})
-    errs = []; pg.on('pageerror', lambda e: errs.append(str(e)))
+    errs = []; pg.on('pageerror', lambda e: errs.append(str(e))); connecte(pg)
     pg.route('**/supabase.min.js', lambda r: r.fulfill(body='', content_type='text/javascript'))
     pg.route('**/config.js', lambda r: r.fulfill(content_type='text/javascript', body='window.TT_CONFIG={nom:"Le Pourquoi",supabaseUrl:"",essaiJours:30};'))
     pg.goto('http://127.0.0.1:8765/'); pg.wait_for_timeout(600)
@@ -45,7 +50,7 @@ with sync_playwright() as p:
     # ---- Mode branché, serveur simulé
     if True:
         pg = b.new_page(viewport={'width': 1100, 'height': 900}, color_scheme='dark')
-        errs = []; pg.on('pageerror', lambda e: errs.append(str(e)))
+        errs = []; pg.on('pageerror', lambda e: errs.append(str(e))); connecte(pg)
         pg.route('**/config.js', lambda r: r.fulfill(content_type='text/javascript', body='window.TT_CONFIG={nom:"Le Pourquoi",supabaseUrl:"https://faux.supabase.co",supabaseAnonKey:"cle"};'))
         calls = []
         def fiche(route):
@@ -59,9 +64,17 @@ with sync_playwright() as p:
         check('Surprise du jour' in pg.inner_text('#card'), 'surprise du jour affichée')
         pg.screenshot(path=f'{OUT}/desktop-dark.png')
         pg.fill('#q', 'les marées'); pg.click('#go'); pg.wait_for_timeout(500)
-        check(calls[-1].get('question') == 'les marées', 'question envoyée sans compte')
+        check(calls[-1].get('question') == 'les marées', 'question envoyée à Emma')
         check(pg.locator('#hl button').count() == 1, 'fiche ajoutée à l\'historique de l\'appareil')
         check(not errs, 'aucune erreur JavaScript (mode branché) ' + str(errs))
+    # ---- Sans session : l'app demande le compte (obligatoire) et passe la main à la page du compte
+    pg = b.new_page()
+    pg.route('**/holdingai.js', lambda r: r.fulfill(content_type='text/javascript',
+        body='window.HoldingAI={demarrer:async(o)=>{window.__opts=o;return{session:null,erreur:null,redirection:true}},deconnexion(){}};'))
+    pg.route('https://compte.letabli.ai/**', lambda r: r.fulfill(content_type='text/javascript', body=''))
+    pg.goto('http://127.0.0.1:8765/'); pg.wait_for_timeout(600)
+    check(pg.evaluate('window.__opts && window.__opts.obligatoire === true'), 'compte obligatoire demandé au démarrage')
+    pg.close()
     b.close()
 srv.shutdown()
 sys.exit(0 if ok else 1)
